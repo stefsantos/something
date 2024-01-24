@@ -22,8 +22,17 @@ const Navbar = () => {
 					</NavLink>
 
                     <NavLink to="/Movie">
-                        Find a Movie
+                        Movies
                     </NavLink>
+
+					<NavLink to="/friends_page">
+                        Friends
+                    </NavLink>
+
+					<NavLink to="/watchlist_page">
+                        Watchlist
+                    </NavLink>
+
 				</NavMenu>
 			</Nav>
 		</>
