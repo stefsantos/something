@@ -1,15 +1,13 @@
 import React from 'react';
 
-function friends_page() {
+function createacct_page() {
     return (
         <div>
-            
                 <header>
-                    <h1>Demons</h1>
+                    <h1>Sign in page</h1>
                 </header>
-            
         </div>
     );
 }
 
-export default friends_page;
+export default createacct_page;

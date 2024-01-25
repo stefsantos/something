@@ -10,7 +10,7 @@ function Movie() {
     const categoryUrls = {
         nowPlaying: 'https://api.themoviedb.org/3/movie/now_playing?api_key=3c4682174e03411b1f2ea9d887d0b8f3',
         popular: 'https://api.themoviedb.org/3/movie/popular?api_key=3c4682174e03411b1f2ea9d887d0b8f3',
-        trending: 'https://api.themoviedb.org/3/trending/movie/day?api_key=3c4682174e03411b1f2ea9d887d0b8f3',
+        toprated: 'https://api.themoviedb.org/3/movie/top_rated?api_key=3c4682174e03411b1f2ea9d887d0b8f3',
         upcoming: 'https://api.themoviedb.org/3/movie/upcoming?api_key=3c4682174e03411b1f2ea9d887d0b8f3'
     };
 
@@ -56,7 +56,9 @@ function Movie() {
     };
 
     return (
+        
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', minWidth: '100%', textAlign: 'center' }}>
+            <h1>Find a Movie</h1>
             <input
                 type="text"
                 placeholder="Search for a movie..."
@@ -71,8 +73,8 @@ function Movie() {
                 <button onClick={() => changeCategory('popular')} style={{ padding: '10px 20px', marginRight: '10px' }}>
                     Popular
                 </button>
-                <button onClick={() => changeCategory('trending')} style={{ padding: '10px 20px', marginRight: '10px' }}>
-                    Trending
+                <button onClick={() => changeCategory('toprated')} style={{ padding: '10px 20px', marginRight: '10px' }}>
+                    Top Rated
                 </button>
                 <button onClick={() => changeCategory('upcoming')} style={{ padding: '10px 20px' }}>
                     Upcoming
