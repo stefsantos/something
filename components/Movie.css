@@ -1,0 +1,9 @@
+.movie-poster {
+    transition: transform 0.3s ease;
+    margin: 10px;
+}
+
+.movie-poster:hover {
+    transform: scale(1.1); /* Scales the poster to 110% of its size */
+    cursor: pointer; /* Changes the cursor to indicate it's clickable */
+}
