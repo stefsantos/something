@@ -48,9 +48,18 @@ export const NavMenu = styled.div`
     flex-direction: column; // Align items vertically
     align-items: left;
     width: 100%;
+    flex-grow: 1; // Allows the component to grow and fill the space
     @media screen and (max-width: 768px) {
-        display: none; // Optionally, manage display for responsive design
+        display: none;
     }
+`;
+
+export const LogoutContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 1rem;
+    margin-top: auto; // Pushes the container to the bottom
 `;
 
 export const NavBtn = styled.nav`
