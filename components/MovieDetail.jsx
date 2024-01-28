@@ -46,17 +46,26 @@ function MovieDetail() {
 
     return (
         <div>
-            <button onClick={handleBack}>Back to Movies</button>
-            {movieDetails && (
+        {movieDetails && (
+            <div style={{ display: 'flex', alignItems: 'center', margin: '20px' }}>
                 <div>
-                    <img src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`} alt={movieDetails.title} />
+                    <img 
+                        src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`} 
+                        alt={movieDetails.title} 
+                        width='400px' 
+                        height='500px' 
+                    />
+                </div>
+                <div style={{ marginLeft: '20px' }}>
                     <h1>{movieDetails.title} ({movieDetails.release_date?.split('-')[0]})</h1>
                     <p>{movieDetails.overview}</p>
                     {movieDetails.director && <p>Director: {movieDetails.director}</p>}
                     <p>User Score: {renderStarRating(movieDetails.vote_average * 10)}</p>
                 </div>
-            )}
-        </div>
+            </div>
+        )}
+        <button onClick={handleBack} style={{ marginTop: '10px', marginLeft: '20px'}}>Back to Movies</button>
+    </div>
     );
 }
 
