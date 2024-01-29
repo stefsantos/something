@@ -25,16 +25,16 @@ import Watchlist from "./pages/watchlist_page";
 function App() {
 
   const [showNavbar, setShowNavbar] = useState(true);
-
+ 
   return (
     <>
       <Router>  
           {showNavbar && <Navbar />}
           <Routes>
+            <Route path="/" element={<PlaceholderContainer><HomePage /></PlaceholderContainer>} />
             <Route path="/home_page" element={<PlaceholderContainer><HomePage /></PlaceholderContainer>} />
             <Route path="/Movie" element={<ContentContainer><Movie /></ContentContainer>} />
 
-            <Route path="/" element={<ContentContainer><Movie /></ContentContainer>} />
             <Route path="/movie/:id" element={<ContentContainer><MovieDetail /></ContentContainer>} />
             
             <Route path="/friends_page" element={<PlaceholderContainer><Friends /></PlaceholderContainer>} />
