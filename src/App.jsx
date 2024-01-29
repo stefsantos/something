@@ -4,6 +4,7 @@ import Movie from '../components/Movie';
 import MovieDetail from '../components/MovieDetail';
 import signin_page from './pages/signin_page';
 import ContentContainer from '../components/ContentContainer'; // Import the ContentContainer
+import PlaceholderContainer from '../components/PlaceholderContainer';
 
 import {
     BrowserRouter as Router,
@@ -24,22 +25,18 @@ function App() {
   return (
     <>
       <Router>  
-        <Navbar />
-        <ContentContainer> {/* Wrap the Routes in ContentContainer */}
+        <Navbar/>
           <Routes>
-            <Route path="/home_page" element={<HomePage />} />
-            <Route path="/Movie" element={<Movie />} />
+            <Route path="/home_page" element={<PlaceholderContainer><HomePage /></PlaceholderContainer>} />
+            <Route path="/Movie" element={<ContentContainer><Movie /></ContentContainer>} />
 
-            <Route path="/" element={<Movie />} />
-            <Route path="/movie/:id" element={<MovieDetail />} />
+            <Route path="/" element={<ContentContainer><Movie /></ContentContainer>} />
+            <Route path="/movie/:id" element={<ContentContainer><MovieDetail /></ContentContainer>} />
             
-            <Route path="/friends_page" element={<Friends />} />
-            <Route path="/watchlist_page" element={<Watchlist />} />
-            <Route path="/signin_page" element={<Signin />} />
-            
+            <Route path="/friends_page" element={<PlaceholderContainer><Friends /></PlaceholderContainer>} />
+            <Route path="/watchlist_page" element={<PlaceholderContainer><Watchlist /></PlaceholderContainer>} />
+            <Route path="/signin_page" element={<PlaceholderContainer><Signin /></PlaceholderContainer>} />            
           </Routes>
-          
-        </ContentContainer>
       </Router>
     </>
   );

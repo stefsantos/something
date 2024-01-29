@@ -6,16 +6,17 @@ const Container = styled.div`
   flex-direction: column; 
   align-items: center; 
   justify-content: flex-start; 
+  text-align: center;
   width: 65%; 
   min-height: 100vh; 
   min-width: 65%;
   margin: 0 auto;
-  margin-left: 275px; 
+  margin-left: 500px; 
   padding: 145px; 
 `;
 
-const ContentContainer = ({ children }) => {
+const PlaceholderContainer = ({ children }) => {
   return <Container>{children}</Container>;
 };
 
-export default ContentContainer;
+export default PlaceholderContainer;
