@@ -31,7 +31,7 @@ function App() {
       <Router>  
           {showNavbar && <Navbar />}
           <Routes>
-            <Route path="/" element={<PlaceholderContainer><HomePage /></PlaceholderContainer>} />
+            <Route path="/" element={<PlaceholderContainer><Signin setShowNavbar={setShowNavbar} /></PlaceholderContainer>} />
             <Route path="/home_page" element={<PlaceholderContainer><HomePage /></PlaceholderContainer>} />
             <Route path="/Movie" element={<ContentContainer><Movie /></ContentContainer>} />
 
