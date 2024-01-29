@@ -1,14 +1,13 @@
 import React from 'react';
 
-function friends_page() {
+function myprofile_page() {
     return (
         <div>
-            
                 <header>
-                    <h1>Demons</h1>
+                    <h1>Hi I'm Nigga</h1>
                 </header>
         </div>
     );
 }
 
-export default friends_page;
+export default myprofile_page;
