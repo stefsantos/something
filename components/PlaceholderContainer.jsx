@@ -5,14 +5,12 @@ const Container = styled.div`
   display: flex; 
   flex-direction: column; 
   align-items: center; 
-  justify-content: flex-start; 
+  justify-content: center; 
   text-align: center;
-  width: 65%; 
-  min-height: 100vh; 
-  min-width: 65%;
-  margin: 0 auto;
-  margin-left: 500px; 
-  padding: 145px; 
+  height: 100vh; 
+  width: 100vw;
+  margin: 0; 
+  padding: 0; 
 `;
 
 const PlaceholderContainer = ({ children }) => {

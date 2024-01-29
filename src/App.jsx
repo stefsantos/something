@@ -5,6 +5,7 @@ import MovieDetail from '../components/MovieDetail';
 import signin_page from './pages/signin_page';
 import ContentContainer from '../components/ContentContainer'; // Import the ContentContainer
 import PlaceholderContainer from '../components/PlaceholderContainer';
+import { useState } from 'react';
 
 import {
     BrowserRouter as Router,
@@ -22,10 +23,13 @@ import Friends from "./pages/friends_page";
 import Watchlist from "./pages/watchlist_page";
 
 function App() {
+
+  const [showNavbar, setShowNavbar] = useState(true);
+
   return (
     <>
       <Router>  
-        <Navbar/>
+          {showNavbar && <Navbar />}
           <Routes>
             <Route path="/home_page" element={<PlaceholderContainer><HomePage /></PlaceholderContainer>} />
             <Route path="/Movie" element={<ContentContainer><Movie /></ContentContainer>} />
@@ -35,7 +39,7 @@ function App() {
             
             <Route path="/friends_page" element={<PlaceholderContainer><Friends /></PlaceholderContainer>} />
             <Route path="/watchlist_page" element={<PlaceholderContainer><Watchlist /></PlaceholderContainer>} />
-            <Route path="/signin_page" element={<PlaceholderContainer><Signin /></PlaceholderContainer>} />            
+            <Route path="/signin_page" element={<PlaceholderContainer><Signin setShowNavbar={setShowNavbar}/></PlaceholderContainer>} />            
           </Routes>
       </Router>
     </>
