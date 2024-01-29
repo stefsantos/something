@@ -16,6 +16,16 @@ const Navbar = () => {
                 </NavMenu>
 
                 <LogoutContainer>
+                    <NavLink to="myprofile_page">
+                        <img src = "https://i1.sndcdn.com/artworks-L49vhWJuy2FaudQW-wDuQQg-t500x500.jpg" height = "75"
+                            style={{ 
+                                borderRadius: '50%', 
+                                width: '75px', 
+                                height: '75px', 
+                                objectFit: 'cover' 
+                            }} 
+                            alt="Profile"></img>
+                    </NavLink>
                     <NavLink to="signin_page">
                        ⎗ Logout
                     </NavLink>
