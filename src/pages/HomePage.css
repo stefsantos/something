@@ -1,45 +1,44 @@
 /* HomePage.css */
 
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-y: auto; /* This allows scrolling */
-}
 
-.container {
+.homepage {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    max-width: 1100px;
-    margin: auto;
-    overflow-y: auto;
-}
-
-header {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: 1100px;
-    margin: auto;
-    overflow-y: auto;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: flex-start; 
+    padding-left: 200px;
     width: 100%;
-    max-width: 800px;
+    margin: auto;
+    overflow-y: auto;
 }
 
+.title {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    padding: 20px 0;
+    padding-left: 200px;
+    background-color: rgb(22, 22, 22);
+    
+}
 
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.userposts {
+    padding-right: 10px; 
+    width: 60%;
+    height: 100%;
+    overflow-y: auto;
+    
+}
 
 .post {
     border: 5px solid rgb(98, 98, 98);
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px;
     width: 100%;
     max-width: 800px;
     box-sizing: border-box;
@@ -47,6 +46,7 @@ main {
     border-radius: 10px;
     background-color: rgb(98, 98, 98);
     color: rgb(255, 255, 255);
+    flex-direction: column;
 }
 
 .post img {
@@ -56,6 +56,19 @@ main {
     margin: 0 auto;
 }
 
-.sidebar {
-    width: 300px;
+
+.sidetitle {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.rightsidebar {
+    width: 30%;
+    padding: 10px;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgb(32, 32, 32);
+    box-sizing: border-box;
 }
