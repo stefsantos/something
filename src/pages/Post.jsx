@@ -1,5 +1,6 @@
 import React from 'react';
 import './HomePage.css';
+import './Post.css';
 
 function Post({ post }) {
     return (
@@ -10,7 +11,11 @@ function Post({ post }) {
             {post.imageUrl && (
                 <img src={post.imageUrl} alt="Post visual" className="post-image" />
             )}
-            <br></br>
+            <div className='postactions'>
+                <div className='heart'></div>
+                <div className='comment'></div>
+                <div className='share'></div>
+            </div>
             <small>{post.timestamp}</small>
         </div>
     );

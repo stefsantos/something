@@ -7,7 +7,14 @@
     padding-left: 200px;
     width: 100%;
     margin: auto;
-    overflow-y: auto;
+    
+    overflow-x: hidden;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 
 .title {
@@ -17,45 +24,14 @@
     padding: 20px 0;
     padding-left: 200px;
     background-color: rgb(22, 22, 22);
-    
-}
-
-.content {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    width: 100%;
 }
 
 .userposts {
     padding-right: 10px; 
     width: 60%;
-    height: 100%;
+    height: 100vh;
     overflow-y: auto;
-    
 }
-
-.post {
-    border: 5px solid rgb(98, 98, 98);
-    padding: 10px;
-    margin: 10px;
-    width: 100%;
-    max-width: 800px;
-    box-sizing: border-box;
-    text-align: left;
-    border-radius: 10px;
-    background-color: rgb(98, 98, 98);
-    color: rgb(255, 255, 255);
-    flex-direction: column;
-}
-
-.post img {
-    max-width: 100%; 
-    height: auto;
-    display: block; 
-    margin: 0 auto;
-}
-
 
 .sidetitle {
     margin-bottom: 20px;
@@ -67,8 +43,9 @@
 .rightsidebar {
     width: 30%;
     padding: 10px;
-    height: 100%;
+    height: 100vh;
     overflow-y: auto;
     background-color: rgb(32, 32, 32);
     box-sizing: border-box;
 }
+
