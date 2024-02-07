@@ -6,7 +6,7 @@ function createacct_page({ setShowNavbar }) {
     const navigate = useNavigate();
 
     const navigatesignin = () => {
-        navigate('/signin_page'); // Corrected the path here
+        navigate('/signin_page'); 
         setShowNavbar(true);
     }
 
