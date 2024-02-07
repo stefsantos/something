@@ -10,7 +10,8 @@ const Container = styled.div`
   height: 100vh; 
   width: 100vw;
   margin: 0; 
-  padding: 0; 
+  padding: 0;
+  
 `;
 
 const PlaceholderContainer = ({ children }) => {
