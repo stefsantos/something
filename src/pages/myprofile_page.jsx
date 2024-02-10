@@ -23,6 +23,15 @@ function myprofile_page() {
                 </button>
             </div>
             
+            <div className="post_container">
+                hi
+            </div>
+
+            <div className="favorites_container">
+                <div className="favorites_header">
+                    Top 6 Favorites
+                </div>
+            </div>
         </div>
     );
 }
