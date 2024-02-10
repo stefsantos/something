@@ -1,5 +1,7 @@
 import React from "react";
 import { Nav, NavLink, Bars, NavMenu, LogoutContainer } from "./NavBarElements";
+import { FaHome, FaUserFriends, FaList } from "react-icons/fa";
+import { BiSolidCameraMovie } from "react-icons/bi";
 
 const Navbar = () => {
     return (
@@ -9,10 +11,24 @@ const Navbar = () => {
 
                 <NavMenu>
                     <h3>CineShare 🎥</h3>
-                    <NavLink to="/home_page">Home</NavLink>
-                    <NavLink to="/Movie">Movies</NavLink>
-                    <NavLink to="/friends_page">Friends</NavLink>
-                    <NavLink to="/watchlist_page">Watchlist</NavLink>
+                    <NavLink to="/home_page">
+                        <FaHome style={{ marginRight: '8px' }} />
+                        Home
+                    </NavLink>
+                    <NavLink to="/Movie">
+                        <BiSolidCameraMovie style={{ marginRight: '8px' }} />
+                        Movies
+                    </NavLink>
+                    <NavLink to="/friends_page">
+                        <FaUserFriends style={{ marginRight: '8px' }} />
+                        Friends
+                    </NavLink>
+                    <NavLink to="/watchlist_page">
+                        <FaList style={{ marginRight: '8px' }} />
+                        Watchlist
+                    </NavLink>
+
+                    
                 </NavMenu>
 
                 <LogoutContainer>
