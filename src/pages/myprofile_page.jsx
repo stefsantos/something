@@ -1,7 +1,28 @@
 import React from 'react';
 import './myprofile_page.css';
+import { Link } from 'react-router-dom';
 
 function myprofile_page() {
+
+    const [trendingMovies, setTrendingMovies] = React.useState([]);
+
+    React.useEffect(() => {
+        const fetchTrendingMovies = async () => {
+            try {
+                const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=3c4682174e03411b1f2ea9d887d0b8f3`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                setTrendingMovies(data.results);
+            } catch (error) {
+                console.error("Error fetching trending movies:", error);
+            }
+        };
+        
+        fetchTrendingMovies();
+    }, []);
+
     return (
         <div className="page">
             <div className="content_container">
@@ -12,7 +33,7 @@ function myprofile_page() {
                         Yco Santos
                     </div>
                     <div className="profile_bio">
-                        I am CCS ID 122 thats dating a 17 year old minor
+                        I am CCS ID 122 
                     </div>
 
                     <button className="button edit_profile">
@@ -31,6 +52,20 @@ function myprofile_page() {
                 <div className="favorites_container">
                     <div className="favorites_header">
                         Top 6 Favorites
+                    </div>
+
+                    <div className="favorites_content">
+                        {trendingMovies.slice(0,6).map(movie => (
+                            <Link to={`/movie/${movie.id}`} key={movie.id}>
+                            <img
+                                key={movie.id}
+                                className="movie-poster"
+                                style={{ width: '111px', height: '150px', margin: '10px', boxShadow: '0px 0px 5px rgba(255, 255, 255, 0.5)'  }}
+                                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                                alt={movie.title}
+                            />
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </div>
