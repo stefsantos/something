@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 import Post from './Post';
 import './HomePage.css';
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -28,6 +28,26 @@ function HomePage() {
         },
     ];
 
+    const [trendingMovies, setTrendingMovies] = React.useState([]);
+
+
+    React.useEffect(() => {
+        const fetchTrendingMovies = async () => {
+            try {
+                const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=3c4682174e03411b1f2ea9d887d0b8f3`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                setTrendingMovies(data.results);
+            } catch (error) {
+                console.error("Error fetching trending movies:", error);
+            }
+        };
+        
+        fetchTrendingMovies();
+    }, []);
+    
     
 
 
@@ -46,12 +66,19 @@ function HomePage() {
                         ))}
                     </div>
                     <div className='rightsidebar'>
-                        <div className='sidetitle'>
-                            Trending Movies</div>
+                        <div className='sidetitle'>Popular Movies</div>
                         <div className='sidebarcontent'>
-                            {posts.map(post => (
-                                <Post key={post.id} post={post} />
-                            ))}
+                        {trendingMovies.map(movie => (
+                            <Link to={`/movie/${movie.id}`} key={movie.id}>
+                            <img
+                                key={movie.id}
+                                className="movie-poster"
+                                style={{ width: '200px', height: '250px', margin: '10px' }}
+                                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                                alt={movie.title}
+                            />
+                            </Link>
+                        ))}
                         </div>
                     </div>
                 </div>

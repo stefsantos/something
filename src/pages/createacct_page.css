@@ -1,0 +1,117 @@
+/* Full screen layout with sidebar for Create Account page */
+.create-account-fullscreen {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #1d1d1d;
+  }
+  
+  /* Blue sidebar styling for Create Account page */
+  .create-account-side-bar {
+    width: 40%;
+    background-color: #101e33; 
+    height: 100%; 
+    color: #ffffff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .create-account-side-bar img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 20px;
+  }
+  
+  /* Container for the create account form */
+  .create-account-container {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* White box container for the create account elements */
+  .signup-container {
+    background-color: #222831;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    color: #eeeeee;
+  }
+  
+  /* Form and input styling for create account page */
+  .signup-container h2 {
+    margin-bottom: 20px;
+  }
+  
+  .signup-form .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .signup-form .input-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .signup-form .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #393e46;
+    background-color: #393e46;
+    border-radius: 4px;
+    color: #eeeeee;
+  }
+  
+  /* Button styling for create account page */
+  .signup-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #101e33; 
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .signup-button:hover {
+    background-color: #007c7a;
+  }
+  
+  /* Link to sign in page from create account page */
+  .signin-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .text-button {
+    background: none;
+    border: none;
+    color: #00adb5;
+    cursor: pointer;
+  }
+  
+  .text-button:hover {
+    text-decoration: underline;
+  }
+  
+  .input-group label {
+    display: block;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
