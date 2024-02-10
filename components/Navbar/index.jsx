@@ -27,7 +27,6 @@ const Navbar = () => {
                         <FaList style={{ marginRight: '8px' }} />
                         Watchlist
                     </NavLink>
-
                     
                 </NavMenu>
 
