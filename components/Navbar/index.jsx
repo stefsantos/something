@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState } from 'react';
 import { Nav, NavLink, Bars, NavMenu, LogoutContainer } from "./NavBarElements";
-import { FaHome, FaUserFriends, FaList } from "react-icons/fa";
+import { FaHome, FaUserFriends, FaList, FaPencilAlt } from "react-icons/fa";
 import { BiSolidCameraMovie } from "react-icons/bi";
+import PostTab from '../../src/pages/PostTab';
+
 
 const Navbar = () => {
+    
+    // State to manage the visibility of the PostTab
+    const [isPostTabVisible, setIsPostTabVisible] = useState(false);
+
+    // Function to toggle the PostTab visibility
+    const togglePostTab = () => {
+        setIsPostTabVisible(!isPostTabVisible);
+    };
+
+    const handlePostClick = (event) => {
+        event.preventDefault();
+        togglePostTab();
+    };
+    
     return (
         <>
             <Nav>
@@ -27,6 +43,10 @@ const Navbar = () => {
                         <FaList style={{ marginRight: '8px' }} />
                         Watchlist
                     </NavLink>
+                    <NavLink to="#" onClick={handlePostClick}>
+                        <FaPencilAlt style={{ marginRight: '8px' }} />
+                        Post
+                    </NavLink>
                     
                 </NavMenu>
 
@@ -46,6 +66,7 @@ const Navbar = () => {
                     </NavLink>
                 </LogoutContainer>
             </Nav>
+            {isPostTabVisible && <PostTab isVisible={isPostTabVisible} onClose={togglePostTab} />}
         </>
     );
 };
