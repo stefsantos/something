@@ -157,7 +157,7 @@
     position: absolute; 
     top: 435px; 
     width: 494px; 
-    height: 395px; 
+    min-height: 395px; 
     background: #000000;
     border-radius: 8px;
     box-shadow: 0px 0px 2px 2px #000000, 0px 0px 2px 2px #FFFFFF;
