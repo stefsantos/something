@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './HomePage.css';
 import './Post.css';
 
 function Post({ post }) {
+    
+    const [isHeartActive, setIsHeartActive] = useState(false);
+
+    // Event handler for clicking the heart icon
+    const toggleHeart = () => {
+        setIsHeartActive(!isHeartActive);
+    };
+    
     return (
         <div className = "post">
             
@@ -12,12 +20,14 @@ function Post({ post }) {
                 <img src={post.imageUrl} alt="Post visual" className="post-image" />
             )}
             <div className='postactions'>
-                <div className='heart'></div>
+            <div className={`heart ${isHeartActive ? 'heart-active' : ''}`} onClick={toggleHeart}></div>
                 <div className='comment'></div>
                 <div className='share'></div>
             </div>
             <small>{post.timestamp}</small>
         </div>
+
+        
     );
 }
 

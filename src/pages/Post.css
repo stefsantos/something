@@ -21,12 +21,44 @@
     margin: 0 auto;
 }
 
-.postactions div:hover {
-    opacity: 0.7;
+.postactions {
+    display: flex; 
+    justify-content: start; 
+    align-items: center; 
 }
 
 .heart, .comment, .share {
-    background-image: url('sprites2.png');
+    margin-top: 10px;
+    background-image: url('sprites2.png'); 
     cursor: pointer;
+    width: 24px; 
+    height: 24px; 
+    background-size: 411px 393px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+
+.heart {
+    background-position: -25px -318px; 
+    margin-right: 5px;
+}
+
+.heart-active {
+    background-position: 0 -318px;
+}
+
+.comment {
+    background-position: -125px -294px; 
+    margin-right: 5px;
+}
+
+.share {
+    background-position: -175px -294px; 
+    margin-left: auto;
+}
+
+.heart:hover, .comment:hover, .share:hover {
+    opacity: 0.7;
 }
 
