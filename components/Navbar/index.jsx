@@ -55,7 +55,7 @@ const Navbar = () => {
 
                 <LogoutContainer>
                     <NavLink to="myprofile_page">
-                        <img src = "https://i1.sndcdn.com/artworks-L49vhWJuy2FaudQW-wDuQQg-t500x500.jpg" height = "75"
+                        <img src = "images/Screenshot_16.png" height = "75"
                             style={{ 
                                 borderRadius: '50%', 
                                 width: '75px', 

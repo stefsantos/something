@@ -65,7 +65,7 @@ function MovieDetail() {
                 </div>
             </div>
         )}
-        <button onClick={handleBack} style={{ marginTop: '10px', marginLeft: '20px'}}>Back to Movies</button>
+        <button onClick={handleBack} style={{ marginTop: '10px', marginLeft: '20px'}}>Back</button>
     </div>
     );
 }

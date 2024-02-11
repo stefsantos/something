@@ -1,6 +1,7 @@
 import React from 'react';
 import './friends_page.css';
 import { FaSearch } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function friends_page() {
     return (
@@ -21,7 +22,7 @@ function friends_page() {
                         <div className="friend_name">
                             Yco Santos
                         </div>
-                        <button class="visit_button">Visit</button>
+                        <Link to="/profile2_page" className="visit_button">Visit</Link>
                     </div>
 
                     <div className="friend_profile">

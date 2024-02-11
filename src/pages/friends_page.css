@@ -195,7 +195,7 @@
     height: 100vh;
     justify-content: flex-start; 
     padding: 10px;
-    overflow: auto;
+    overflow-y: auto;
 }
 
 .friendrequest_container::-webkit-scrollbar {

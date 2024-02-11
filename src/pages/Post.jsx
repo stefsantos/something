@@ -27,8 +27,13 @@ function Post({ post }) {
         <div className = "post">
             <h4>
                 <Link to={`/profile/${post.user}`} className="post-username">
-                    {post.user}
+                    {post.user} 
                 </Link>
+                {''} watched {''}
+                <Link to={`/movie/${post.movieId}`} className="post-movie">
+                    {post.movie}
+                </Link>
+
             </h4>
             <p>{post.content}</p>
             {post.imageUrl && (
