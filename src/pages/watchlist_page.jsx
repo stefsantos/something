@@ -45,7 +45,6 @@ function Movie() {
       <div className="movie-cards-container">
         {movieList.map(movie => (
           <div key={movie.id} className="movie-card">
-            <button className="close-button" onClick={() => removeMovie(movie.id)}>X</button>
             <Link to={`/movie/${movie.id}`}>
               <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
             </Link>
