@@ -72,3 +72,27 @@
 .close-popup:hover {
     color: rgb(83, 54, 156); /* Darker red when hovered */
 }
+
+.comment-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* This separates the comment text and delete button */
+    margin-bottom: 10px; /* Add some space between comment items */
+}
+
+.comment-text {
+    flex-grow: 1; /* Allows the text to take up as much space as possible */
+    margin-right: 10px; /* Adds some space between the text and the delete button */
+}
+
+.delete-comment {
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #999; /* Gray color; adjust as needed */
+    font-size: 20px; /* Adjust size as needed */
+}
+
+.delete-comment:hover {
+    color: #666; /* Darker gray on hover */
+}

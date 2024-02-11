@@ -1,30 +1,62 @@
-
-import React from 'react';
-import './CommentPopup.css'; // Create this CSS file to style the pop-up
+import React, { useState } from 'react';
+import './CommentPopup.css';
 
 const CommentPopup = ({ isOpen, onClose, post }) => {
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState('');
+
+  const handleInputChange = (e) => {
+    setNewComment(e.target.value);
+  };
+
+  const removeComment = (commentId) => {
+    setComments(comments.filter(comment => comment.id !== commentId));
+  };
+
+  const handleCommentSubmit = (e) => {
+    e.preventDefault();
+    if (!newComment.trim()) return;
+    const newCommentObject = {
+      id: Date.now(), // Use the current timestamp as a simple unique ID
+      text: newComment,
+    };
+    setComments(prevComments => [...prevComments, newCommentObject]);
+    setNewComment('');
+  };
+  
+
   if (!isOpen) return null;
 
   return (
     <div className="comment-popup-overlay" onClick={onClose}>
       <div className="comment-popup-content" onClick={(e) => e.stopPropagation()}>
         <button className="close-popup" onClick={onClose}>×</button>
-        {/* Display the post content or any other details here */}
         <div className="post-content">
           <p>{post.content}</p>
-          {/* Include the image if there is one */}
           {post.imageUrl && (
-            <img src={post.imageUrl} alt="Post visual" />
+            <img src={post.imageUrl} alt="Post visual" style={{ maxWidth: '100%', marginTop: '10px' }} />
           )}
         </div>
-        {/* Placeholder for comment submission, you can add a form here */}
-        <div className="submit-comment">
-          <input type="text" placeholder="Write a comment..." />
-          <button type="button">Submit</button>
-        </div>
-        {/* Placeholder for existing comments, you'd populate this from state or props */}
+        <form className="submit-comment" onSubmit={handleCommentSubmit}>
+          <input
+            type="text"
+            placeholder="Write a comment..."
+            value={newComment}
+            onChange={handleInputChange}
+          />
+          <button type="submit">Submit</button>
+        </form>
         <div className="comments-list">
-          <p>No comments yet.</p>
+          {comments.length > 0 ? (
+            comments.map((comment) => (
+              <div key={comment.id} className="comment-item">
+                <span className="comment-text">{comment.text}</span>
+                <button onClick={() => removeComment(comment.id)} className="delete-comment">&#x1F5D1;</button>
+              </div>
+            ))
+          ) : (
+            <p>No comments yet.</p>
+          )}
         </div>
       </div>
     </div>
