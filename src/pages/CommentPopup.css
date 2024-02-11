@@ -26,7 +26,7 @@
     z-index: 1001;
 }
 
-/* Adjust the .submit-comment container to use Flexbox */
+
 .submit-comment {
     display: flex;
     justify-content: space-between;
@@ -35,7 +35,7 @@
     width: 100%; 
 }
 
-/* Style the input text box to take up the available space */
+
 .submit-comment input[type="text"] {
     flex-grow: 1; 
     margin-right: 10px; 
@@ -70,29 +70,29 @@
 }
 
 .close-popup:hover {
-    color: rgb(83, 54, 156); /* Darker red when hovered */
+    color: rgb(83, 54, 156); 
 }
 
 .comment-item {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* This separates the comment text and delete button */
-    margin-bottom: 10px; /* Add some space between comment items */
+    justify-content: space-between; 
+    margin-bottom: 10px; 
 }
 
 .comment-text {
-    flex-grow: 1; /* Allows the text to take up as much space as possible */
-    margin-right: 10px; /* Adds some space between the text and the delete button */
+    flex-grow: 1; 
+    margin-right: 10px; 
 }
 
 .delete-comment {
     cursor: pointer;
     background: none;
     border: none;
-    color: #999; /* Gray color; adjust as needed */
-    font-size: 20px; /* Adjust size as needed */
+    color: #999; 
+    font-size: 20px; 
 }
 
 .delete-comment:hover {
-    color: #666; /* Darker gray on hover */
+    color: rgb(147, 105, 255); 
 }
