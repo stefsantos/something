@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 import './signin_page.css'; // Make sure the CSS file is named signin_page.css
 import logo from '../assets/CineShare Logo Request.webp';
 
-
-
 function SigninPage({ setShowNavbar }) {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');

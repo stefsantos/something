@@ -59,6 +59,7 @@ function HomePage() {
             </div>
             
             <div className='homepage'>
+                <center>
                 <div className='content'>
                     <div className='userposts'>
                         {posts.map(post => (
@@ -81,7 +82,9 @@ function HomePage() {
                         ))}
                         </div>
                     </div>
+                    
                 </div>
+                </center>
             </div>
         </>
     );
