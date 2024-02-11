@@ -11,7 +11,6 @@ import Friends from "./pages/friends_page";
 import Watchlist from "./pages/watchlist_page";
 import MyProfile from "./pages/myprofile_page";
 import OtherProfile from "./pages/profile2_page";
-import UserProfile from "./pages/IpeZAZAZA";
 
 
 import {
@@ -48,7 +47,7 @@ function App() {
             <Route path="/signin_page" element={<PlaceholderContainer><Signin setShowNavbar={setShowNavbar}/></PlaceholderContainer>} />   
             <Route path="/createacct_page" element={<PlaceholderContainer><CreateAcct setShowNavbar={setShowNavbar}/></PlaceholderContainer>} />
             <Route path="/profile2_page" element={<PlaceholderContainer><OtherProfile setShowNavbar={setShowNavbar}/></PlaceholderContainer>} />
-            <Route path="/profile/:username" element={<UserProfile />} />
+            <Route path="/profile/:username" element={<OtherProfile />} />
           </Routes>
       </Router>
     </>

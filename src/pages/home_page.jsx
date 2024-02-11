@@ -10,14 +10,14 @@ function HomePage() {
     
     const posts = [
         {   id: 1, 
-            user: 'Gromp', 
+            user: 'Philipp Matthew Suarez', 
             movie: 'Evangelion: 3.0+1.0 Thrice Upon a Time',
             movieId: 283566,
             content: 'Trying out the post feature!', 
             timestamp: '13 mins ago'
         },
         {   id: 2, 
-            user: 'IpeZAZAZA', 
+            user: 'Javi del Rosario', 
             movie: 'Evangelion: 3.0+1.0 Thrice Upon a Time',
             movieId: 283566,
             content: 'Its so over', 
