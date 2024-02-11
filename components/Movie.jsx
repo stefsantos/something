@@ -10,11 +10,14 @@ function Movie() {
     const [url, setUrl] = useState('https://api.themoviedb.org/3/movie/popular?api_key=3c4682174e03411b1f2ea9d887d0b8f3');
     const [watchlist, setWatchlist] = useState({});
 
+    // Get today's date in YYYY-MM-DD format for API query
+    const today = new Date().toISOString().split('T')[0];
+
     const categoryUrls = {
         nowPlaying: 'https://api.themoviedb.org/3/movie/now_playing?api_key=3c4682174e03411b1f2ea9d887d0b8f3',
         popular: 'https://api.themoviedb.org/3/movie/popular?api_key=3c4682174e03411b1f2ea9d887d0b8f3',
         toprated: 'https://api.themoviedb.org/3/movie/top_rated?api_key=3c4682174e03411b1f2ea9d887d0b8f3',
-        upcoming: 'https://api.themoviedb.org/3/movie/upcoming?api_key=3c4682174e03411b1f2ea9d887d0b8f3'
+        upcoming: `https://api.themoviedb.org/3/discover/movie?api_key=3c4682174e03411b1f2ea9d887d0b8f3&primary_release_date.gte=${today}&sort_by=release_date.asc`
     };
 
     useEffect(() => {

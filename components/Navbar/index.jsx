@@ -43,10 +43,11 @@ const Navbar = () => {
                         <FaList style={{ marginRight: '8px' }} />
                         Watchlist
                     </NavLink>
-                    <NavLink to="#" onClick={handlePostClick}>
+                    <br></br>
+                    <button to="#" onClick={handlePostClick} style = {{  backgroundColor: "#A949F5"}}>
                         <FaPencilAlt style={{ marginRight: '8px' }} />
                         Post
-                    </NavLink>
+                    </button>
                     
                 </NavMenu>
 
