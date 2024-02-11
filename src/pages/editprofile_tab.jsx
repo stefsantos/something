@@ -18,7 +18,7 @@ const EditProfileTab = ({ isVisible, onClose }) => {
         </div>
         <div className="modal-footer">
           <button className="button cancel-button" onClick={onClose}>Cancel</button>
-          <button className="button create-button" type="submit">Save Changes</button>
+          <button className="button create-button" onClick={onClose} type="submit">Save Changes</button>
         </div>
       </div>
     </div>
