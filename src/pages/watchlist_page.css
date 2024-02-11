@@ -38,6 +38,17 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   }
   
+  .movie-card .close-button {
+    top: 0;
+    right: 0;
+    padding: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    position: absolute;
+  }
+  
   .movie-card img {
     width: 100%;
     height: auto;
@@ -62,6 +73,15 @@
   .movie-card-button:hover {
     background-color: #0056b3;
   }
+  
+  .movie-card .close-button {
+    display: none;
+  }
+  
+  .movie-card:hover .close-button {
+    display: block;
+  }
+  
   
   
 
