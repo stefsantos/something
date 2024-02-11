@@ -1,6 +1,6 @@
 import React, { useState, useLayoutEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import './signin_page.css'; // Make sure the CSS file is named signin_page.css
+import './signin_page.css'; 
 import logo from '../assets/CineShare Logo Request.webp';
 
 function SigninPage({ setShowNavbar }) {
@@ -21,7 +21,7 @@ function SigninPage({ setShowNavbar }) {
     const handleLogin = (event) => {
         event.preventDefault();
         console.log('Login with:', email, password);
-        navigateHome(); // Redirect to home after login
+        navigateHome(); 
     }
 
     useLayoutEffect(() => {

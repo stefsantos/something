@@ -57,7 +57,8 @@ function MovieDetail() {
                     />
                 </div>
                 <div style={{ marginLeft: '20px' }}>
-                    <h1>{movieDetails.title} ({movieDetails.release_date?.split('-')[0]})</h1>
+                    <h1>{movieDetails.title} ({movieDetails.release_date?.split('-')[0]}) </h1>
+                    
                     <p>{movieDetails.overview}</p>
                     {movieDetails.director && <p>Director: {movieDetails.director}</p>}
                     <p>User Score: {renderStarRating(movieDetails.vote_average * 10)}</p>
