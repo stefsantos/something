@@ -7,9 +7,8 @@ const Container = styled.div`
   align-items: center; 
   justify-content: flex-start; 
   width: 65%; 
-  min-width: 65%;
-  margin: 0 auto;
-  margin-left: 275px; 
+  margin-left: auto;
+  margin-right: auto;
   padding: 145px; 
 `;
 
