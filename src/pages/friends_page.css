@@ -83,7 +83,6 @@
     flex-direction: row;
     background-color: #1d1d1d;
     width: 40vw;
-    height: 100vh;
     justify-content: space-between;
     flex-wrap: wrap;
 }
