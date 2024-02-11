@@ -27,7 +27,7 @@ function myprofile_page() {
         
         fetchTrendingMovies();
     }, []);
-
+ 
     const [isEditProfileTabVisible, setIsEditProfileTabVisible] = useState(false);
 
     const toggleEditProfileTab = () => {
@@ -52,7 +52,7 @@ function myprofile_page() {
             <div className="content_container">
             <div className="profile_container">
 
-                    {username === 'Yco Santos' && (
+                    {username === username && (
                         <img src="images/yco.png" className="profile_banner" alt="Yco Santos" />
                     )}
                     {username === 'Austin Gan' && (
@@ -68,7 +68,7 @@ function myprofile_page() {
                         <img src="images/moist.png" className="profile_banner" alt="Charles White" />
                     )}
 
-                    {username === 'Yco Santos' && (
+                    {username === username && (
                         <img src="images/yco.png" className="profile_avatar avatar" alt="Yco Santos" />
                     )}
                     {username === 'Austin Gan' && (
