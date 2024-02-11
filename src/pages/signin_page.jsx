@@ -9,6 +9,7 @@ function SigninPage({ setShowNavbar }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const { updateUser } = useUser();
+    const [errorMessage, setErrorMessage] = useState('');
 
     const userContext = useUser();
 
@@ -34,18 +35,39 @@ function SigninPage({ setShowNavbar }) {
         return userMapping[email] || ''; 
     };
 
-    const handleLogin = (event) => {
-        event.preventDefault();
-        console.log('Login with:', email, password);
-        const username = getUsernameFromEmail(email);
-        console.log('Username:', username);
-        userContext.updateUser(username);
-        console.log('User Context after login:', userContext);
-        navigateHome();
-      };
+
+    
+        const handleLogin = (event) => {
+            event.preventDefault();
+            console.log('Login with:', email, password);
+            const username = getUsernameFromEmail(email);
+        
+
+            const isPasswordCorrect = checkPassword(email, password);
+        
+            if (isPasswordCorrect) {
+                console.log('Username:', username);
+                userContext.updateUser(username);
+                console.log('User Context after login:', userContext);
+                navigateHome();
+            } else {
+
+                setErrorMessage('Incorrect email or password');
+            }
+        };
       
 
-      
+        const checkPassword = (email, enteredPassword) => {
+            const userPasswordMapping = {
+                'austin@gmail.com': 'austinpassword',
+                'yco@gmail.com': 'ycopassword',
+                'philipp@gmail.com': 'philipppassword',
+                'javi@gmail.com': 'javipassword',
+                'moist@gmail.com': 'moistpassword'
+            };
+        
+            return userPasswordMapping[email] === enteredPassword;
+        };
 
     
     useLayoutEffect(() => {
@@ -79,6 +101,7 @@ function SigninPage({ setShowNavbar }) {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
+                            {errorMessage && <p style={{ color: 'red', marginTop: '8px' }}>{errorMessage}</p>}
                         </div>
                         <div className="remember-forgot">
                         </div>
