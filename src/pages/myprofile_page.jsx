@@ -27,7 +27,7 @@ function myprofile_page() {
         
         fetchTrendingMovies();
     }, []);
-
+ 
     const [isEditProfileTabVisible, setIsEditProfileTabVisible] = useState(false);
 
     const toggleEditProfileTab = () => {
