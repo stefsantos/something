@@ -59,11 +59,6 @@ function SigninPage({ setShowNavbar }) {
                             />
                         </div>
                         <div className="remember-forgot">
-                            <label>
-                                <input type="checkbox" />
-                                Remember me
-                            </label>
-                            <a href="/forgot-password">Forgot password?</a>
                         </div>
                         <button type="submit" className="signin-button">Sign in</button>
                     </form>
