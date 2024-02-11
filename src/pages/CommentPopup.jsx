@@ -17,7 +17,7 @@ const CommentPopup = ({ isOpen, onClose, post }) => {
     e.preventDefault();
     if (!newComment.trim()) return;
     const newCommentObject = {
-      id: Date.now(), // Use the current timestamp as a simple unique ID
+      id: Date.now(), 
       text: newComment,
     };
     setComments(prevComments => [...prevComments, newCommentObject]);
