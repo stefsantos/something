@@ -7,8 +7,6 @@ import PostTab from '../../src/pages/PostTab';
 
 const Navbar = () => {
     
-    
-
     // State to manage the visibility of the PostTab
     const [isPostTabVisible, setIsPostTabVisible] = useState(false);
 
