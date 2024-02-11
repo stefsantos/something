@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Movie.css'; // Ensure this path matches your project structure
+import './Movie.css'; // Make sure this path is correct
 
 function Movie() {
     const [movieList, setMovieList] = useState([]);
     const [page, setPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState('');
     const [currentCategory, setCurrentCategory] = useState('popular');
-    const [url, setUrl] = useState('https://api.themoviedb.org/3/movie/popular?api_key=3c4682174e03411b1f2ea9d887d0b8f3'); // Replace YOUR_API_KEY with your actual TheMovieDB API key
+    const [url, setUrl] = useState('https://api.themoviedb.org/3/movie/popular?api_key=3c4682174e03411b1f2ea9d887d0b8f3');
     const [watchlist, setWatchlist] = useState({});
 
     const categoryUrls = {
@@ -61,7 +61,7 @@ function Movie() {
     const handleAddToWatchlist = (movieId) => {
         setWatchlist(prevWatchlist => ({
             ...prevWatchlist,
-            [movieId]: !prevWatchlist[movieId] // Toggle the watchlist status
+            [movieId]: !prevWatchlist[movieId]
         }));
     };
 
@@ -75,6 +75,12 @@ function Movie() {
                 onChange={handleSearchChange}
                 className="search-input"
             />
+            <div className="filter-buttons">
+                <button onClick={() => changeCategory('nowPlaying')}>Now Playing</button>
+                <button onClick={() => changeCategory('popular')}>Popular</button>
+                <button onClick={() => changeCategory('toprated')}>Top Rated</button>
+                <button onClick={() => changeCategory('upcoming')}>Upcoming</button>
+            </div>
             <div className="movie-list">
                 {movieList.map(movie => (
                     <div key={movie.id} className="movie-item">

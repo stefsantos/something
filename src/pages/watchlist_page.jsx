@@ -39,6 +39,7 @@ function Movie() {
   };
 
   return (
+    <center>
     <div className="movie-list-container">
       <h1>Watchlist</h1>
       <div className="movie-cards-container">
@@ -56,6 +57,7 @@ function Movie() {
         ))}
       </div>
     </div>
+    </center>
   );
 }
 
