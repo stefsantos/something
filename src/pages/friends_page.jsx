@@ -43,7 +43,45 @@ function friends_page() {
                 </div>
 
                 <div className="friendrequest_container">
-                    {/* Example friend request; you might want to fetch or map through actual request data similar to friendsData */}
+                    
+                    <div className="friend_request">
+                        <img src="images/Screenshot_16.png" alt="avatar" className="request_avatar" />
+                        <div className="request_text">
+                            <div className="request_name">
+                                Yco Santos
+                            </div>
+                            <div className="mutual_box">
+                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
+                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
+                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
+                                <div className="mutual_text">
+                                    3 Mutual Contacts
+                                </div>
+                            </div>
+                        </div>
+                        <button className="decline_button">Decline</button>
+                        <button className="accept_button">Accept</button>
+                    </div>
+
+                    <div className="friend_request">
+                        <img src="images/Screenshot_16.png" alt="avatar" className="request_avatar" />
+                        <div className="request_text">
+                            <div className="request_name">
+                                Yco Santos
+                            </div>
+                            <div className="mutual_box">
+                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
+                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
+                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
+                                <div className="mutual_text">
+                                    3 Mutual Contacts
+                                </div>
+                            </div>
+                        </div>
+                        <button className="decline_button">Decline</button>
+                        <button className="accept_button">Accept</button>
+                    </div>
+
                     <div className="friend_request">
                         <img src="images/Screenshot_16.png" alt="avatar" className="request_avatar" />
                         <div className="request_text">
