@@ -65,11 +65,115 @@ function friends_page() {
                 </div>
 
                 <div className="friendrequest_container">
-                    <div className="friend_request">hi</div>
-                    <div className="friend_request">hi</div>
-                    <div className="friend_request">hi</div>
-                    <div className="friend_request">hi</div>
-                    <div className="friend_request">hi</div>
+                    <div className="friend_request">
+                        <img src="images/Screenshot_16.png" alt="avatar" class="request_avatar " />
+                        
+                        <div className="request_text">
+                            <div className="request_name">
+                                    Yco Santos
+                            </div>
+                            
+                            <div className="mutual_box">
+                                <img src="images/Screenshot_16.png" alt="avatar" class="mutual_avatar" />
+                                <img src="images/Screenshot_16.png" alt="avatar" class="mutual_avatar" />
+                                <img src="images/Screenshot_16.png" alt="avatar" class="mutual_avatar" />
+                                <div className="mutual_text">
+                                    3 Mutual Contacts
+                                </div>
+                            </div> 
+                        </div>
+
+                        <button class="decline_button">Decline</button>
+                        <button class="accept_button">Accept</button>
+                    </div>
+
+                    <div className="friend_request">
+                        <img src="images/Screenshot_16.png" alt="avatar" class="request_avatar " />
+                        
+                        <div className="request_text">
+                            <div className="request_name">
+                                    Yco Santos
+                            </div>
+                            
+                            <div className="mutual_box">
+                                <img src="images/Screenshot_16.png" alt="avatar" class="mutual_avatar" />
+                                <img src="images/Screenshot_16.png" alt="avatar" class="mutual_avatar" />
+                                <img src="images/Screenshot_16.png" alt="avatar" class="mutual_avatar" />
+                                <div className="mutual_text">
+                                    3 Mutual Contacts
+                                </div>
+                            </div> 
+                        </div>
+
+                        <button class="decline_button">Decline</button>
+                        <button class="accept_button">Accept</button>
+                    </div>
+                    
+                    <div className="friend_request">
+                        <img src="images/Screenshot_16.png" alt="avatar" class="request_avatar " />
+                        
+                        <div className="request_text">
+                            <div className="request_name">
+                                    Yco Santos
+                            </div>
+                            
+                            <div className="mutual_box">
+                                <img src="images/Screenshot_16.png" alt="avatar" class="mutual_avatar" />
+                                <img src="images/Screenshot_16.png" alt="avatar" class="mutual_avatar" />
+                                <img src="images/Screenshot_16.png" alt="avatar" class="mutual_avatar" />
+                                <div className="mutual_text">
+                                    3 Mutual Contacts
+                                </div>
+                            </div> 
+                        </div>
+
+                        <button class="decline_button">Decline</button>
+                        <button class="accept_button">Accept</button>
+                    </div>
+                    
+                    <div className="friend_request">
+                        <img src="images/Screenshot_16.png" alt="avatar" class="request_avatar " />
+                        
+                        <div className="request_text">
+                            <div className="request_name">
+                                    Yco Santos
+                            </div>
+                            
+                            <div className="mutual_box">
+                                <img src="images/Screenshot_16.png" alt="avatar" class="mutual_avatar" />
+                                <img src="images/Screenshot_16.png" alt="avatar" class="mutual_avatar" />
+                                <img src="images/Screenshot_16.png" alt="avatar" class="mutual_avatar" />
+                                <div className="mutual_text">
+                                    3 Mutual Contacts
+                                </div>
+                            </div> 
+                        </div>
+
+                        <button class="decline_button">Decline</button>
+                        <button class="accept_button">Accept</button>
+                    </div>
+
+                    <div className="friend_request">
+                        <img src="images/Screenshot_16.png" alt="avatar" class="request_avatar " />
+                        
+                        <div className="request_text">
+                            <div className="request_name">
+                                    Yco Santos
+                            </div>
+                            
+                            <div className="mutual_box">
+                                <img src="images/Screenshot_16.png" alt="avatar" class="mutual_avatar" />
+                                <img src="images/Screenshot_16.png" alt="avatar" class="mutual_avatar" />
+                                <img src="images/Screenshot_16.png" alt="avatar" class="mutual_avatar" />
+                                <div className="mutual_text">
+                                    3 Mutual Contacts
+                                </div>
+                            </div> 
+                        </div>
+
+                        <button class="decline_button">Decline</button>
+                        <button class="accept_button">Accept</button>
+                    </div>
                 </div>
             </div>
        </div>
