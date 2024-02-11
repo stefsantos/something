@@ -6,6 +6,14 @@ import ContentContainer from '../components/ContentContainer'; // Import the Con
 import PlaceholderContainer from '../components/PlaceholderContainer';
 import { useState } from 'react';
 
+import HomePage from "./pages/home_page";
+import Friends from "./pages/friends_page";
+import Watchlist from "./pages/watchlist_page";
+import MyProfile from "./pages/myprofile_page";
+
+import UserProfile from "./pages/IpeZAZAZA";
+
+
 import {
     BrowserRouter as Router,
     Routes,
@@ -17,10 +25,7 @@ import Signin from "./pages/signin_page";
 import CreateAcct from "./pages/createacct_page";
 
 
-import HomePage from "./pages/home_page";
-import Friends from "./pages/friends_page";
-import Watchlist from "./pages/watchlist_page";
-import MyProfile from "./pages/myprofile_page";
+
 
 function App() {
 
@@ -43,7 +48,7 @@ function App() {
             <Route path="/signin_page" element={<PlaceholderContainer><Signin setShowNavbar={setShowNavbar}/></PlaceholderContainer>} />   
             <Route path="/createacct_page" element={<PlaceholderContainer><CreateAcct setShowNavbar={setShowNavbar}/></PlaceholderContainer>} />
             
-
+            <Route path="/profile/:username" element={<UserProfile />} />
           </Routes>
       </Router>
     </>

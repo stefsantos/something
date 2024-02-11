@@ -13,6 +13,7 @@
     color: rgb(255, 255, 255);
     flex-direction: column;
     display: flex;
+    
 }
 
 .post img {
@@ -21,6 +22,11 @@
     display: block; 
     margin: 0 auto;
 }
+
+.post-username {
+    color: rgb(255, 255, 255);
+}
+
 
 .postactions {
     display: flex; 

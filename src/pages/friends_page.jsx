@@ -17,24 +17,45 @@ function friends_page() {
                 <div className="friendprofiles_container">
                     
                     <div className="friend_profile">
-                        hi
+                        <img src="images/Screenshot_16.png" alt="avatar" class="friend_avatar " />
+                        <div className="friend_name">
+                            Yco Santos
+                        </div>
+                        <button class="visit_button">Visit</button>
                     </div>
 
                     <div className="friend_profile">
-                        hiiii
+                        <img src="images/Screenshot_16.png" alt="avatar" class="friend_avatar " />
+                        <div className="friend_name">
+                            Yco Santos
+                        </div>
+                        <button class="visit_button">Visit</button>
                     </div>
 
                     <div className="friend_profile">
-                        hiiii
+                        <img src="images/Screenshot_16.png" alt="avatar" class="friend_avatar " />
+                        <div className="friend_name">
+                            Yco Santos
+                        </div>
+                        <button class="visit_button">Visit</button>
                     </div>
 
                     <div className="friend_profile">
-                        hiiii
+                        <img src="images/Screenshot_16.png" alt="avatar" class="friend_avatar " />
+                        <div className="friend_name">
+                            Yco Santos
+                        </div>
+                        <button class="visit_button">Visit</button>
                     </div>
 
                     <div className="friend_profile">
-                        hiiii
+                        <img src="images/Screenshot_16.png" alt="avatar" class="friend_avatar " />
+                        <div className="friend_name">
+                            Yco Santos
+                        </div>
+                        <button class="visit_button">Visit</button>
                     </div>
+                    
                 </div>
             </div>
 
