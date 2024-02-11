@@ -70,19 +70,21 @@ function Movie() {
 
     return (
         <div className="movie-container">
-            <h1>Find a Movie</h1>
-            <input
-                type="text"
-                placeholder="Search for a movie..."
-                value={searchTerm}
-                onChange={handleSearchChange}
-                className="search-input"
-            />
-            <div className="filter-buttons">
-                <button onClick={() => changeCategory('nowPlaying')}>Now Playing</button>
-                <button onClick={() => changeCategory('popular')}>Popular</button>
-                <button onClick={() => changeCategory('toprated')}>Top Rated</button>
-                <button onClick={() => changeCategory('upcoming')}>Upcoming</button>
+            <div className="movie_header">
+                <h1>Find a Movie</h1>
+                <input
+                    type="text"
+                    placeholder="Search for a movie..."
+                    value={searchTerm}
+                    onChange={handleSearchChange}
+                    className="search-input"
+                />
+                <div className="filter-buttons">
+                    <button onClick={() => changeCategory('nowPlaying')}>Now Playing</button>
+                    <button onClick={() => changeCategory('popular')}>Popular</button>
+                    <button onClick={() => changeCategory('toprated')}>Top Rated</button>
+                    <button onClick={() => changeCategory('upcoming')}>Upcoming</button>
+                </div>
             </div>
             <div className="movie-list">
                 {movieList.map(movie => (

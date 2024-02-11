@@ -3,12 +3,14 @@ import './myprofile_page.css';
 import { Link } from 'react-router-dom';
 import EditProfileTab from '../../src/pages/editprofile_tab';
 import Post from './Post';
+import { useUser } from '../../src/UserContext';
 
 function myprofile_page() {
 
     const [trendingMovies, setTrendingMovies] = React.useState([]);
+    const { username } = useUser();
+    console.log('Username:', username);
     
-
     React.useEffect(() => {
         const fetchTrendingMovies = async () => {
             try {
@@ -48,12 +50,44 @@ function myprofile_page() {
     return (
         <div className="page">
             <div className="content_container">
-                <div className="profile_container">
-                    <img src="images/Screenshot_15.png" class="profile_banner" alt="banner"/>
-                    <img src="images/Screenshot_16.png" class="profile_avatar avatar" alt="avatar"/>
+            <div className="profile_container">
+
+                    {username === 'Yco Santos' && (
+                        <img src="images/yco.png" className="profile_banner" alt="Yco Santos" />
+                    )}
+                    {username === 'Austin Gan' && (
+                        <img src="images/austin.jpg" className="profile_banner" alt="Austin Gan" />
+                    )}
+                    {username === 'Philipp Matthew Suarez' && (
+                        <img src="images/philipp.jpg" className="profile_banner" alt="Philipp Matthew Suarez" />
+                    )}
+                    {username === 'Javi del Rosario' && (
+                        <img src="images/javi.jpg" className="profile_banner" alt="Javi del Rosario" />
+                    )}
+                    {username === 'Charles White' && (
+                        <img src="images/moist.png" className="profile_banner" alt="Charles White" />
+                    )}
+
+                    {username === 'Yco Santos' && (
+                        <img src="images/yco.png" className="profile_avatar avatar" alt="Yco Santos" />
+                    )}
+                    {username === 'Austin Gan' && (
+                        <img src="images/austin.jpg" className="profile_avatar avatar" alt="Austin Gan" />
+                    )}
+                    {username === 'Philipp Matthew Suarez' && (
+                        <img src="images/philipp.jpg" className="profile_avatar avatar" alt="Philipp Matthew Suarez" />
+                    )}
+                    {username === 'Javi del Rosario' && (
+                        <img src="images/javi.jpg" className="profile_avatar avatar" alt="Javi del Rosario" />
+                    )}
+                    {username === 'Charles White' && (
+                        <img src="images/moist.png" className="profile_avatar avatar" alt="Charles White" />
+                    )}
+
                     <div className="profile_name">
-                        Yco Santos
+                        {username}
                     </div>
+
                     <div className="profile_bio">
                         I am CCS ID 122 
                     </div>
