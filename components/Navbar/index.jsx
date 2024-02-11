@@ -7,11 +7,8 @@ import { useUser } from '../../src/UserContext';
 
 const Navbar = () => {
     
-<<<<<<< HEAD
     const { username } = useUser();
-
-=======
->>>>>>> 7de7f1211b84b21433b79edc816e2194e699cfca
+    
     // State to manage the visibility of the PostTab
     const [isPostTabVisible, setIsPostTabVisible] = useState(false);
 
