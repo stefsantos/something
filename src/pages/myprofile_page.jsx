@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './myprofile_page.css';
 import { Link } from 'react-router-dom';
+import EditProfileTab from '../../src/pages/editprofile_tab';
 
 function myprofile_page() {
 
@@ -23,6 +24,17 @@ function myprofile_page() {
         fetchTrendingMovies();
     }, []);
 
+    const [isEditProfileTabVisible, setIsEditProfileTabVisible] = useState(false);
+
+    const toggleEditProfileTab = () => {
+        setIsEditProfileTabVisible(!isEditProfileTabVisible);
+    };
+
+    const handleEditProfileClick = (event) => {
+        event.preventDefault();
+        toggleEditProfileTab();
+    };
+
     return (
         <div className="page">
             <div className="content_container">
@@ -36,13 +48,11 @@ function myprofile_page() {
                         I am CCS ID 122 
                     </div>
 
-                    <button className="button edit_profile">
+                    <button className="button edit_profile" onClick={handleEditProfileClick}>
                         Edit Profile
                     </button>
 
-                    <button className="button more_profile">
-                        ...
-                    </button>
+                    
                 </div>
                 
                 <div className="post_container">
@@ -69,7 +79,10 @@ function myprofile_page() {
                     </div>
                 </div>
             </div>
+
+            {isEditProfileTabVisible && <EditProfileTab isVisible={isEditProfileTabVisible} onClose={toggleEditProfileTab} />}
         </div>
+        
     );
 }
 
