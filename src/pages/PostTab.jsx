@@ -1,5 +1,4 @@
 import React from "react";
-import { Backdrop, Modal, NavBtnLink } from "../../components/Navbar/NavBarElements";
 import "./PostTab.css";
 
 
