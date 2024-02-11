@@ -123,11 +123,11 @@
     color: white; /* neutral-900 */
 }
 
-.visit_button {
+.visit_button, .visit_button[href] {
     margin-top: 25px;
     top: 193px; 
     left: 16px; 
-    width: 134px; 
+    width: 100px;
     height: 36px; 
     padding: 0 12px; 
     display: flex; 
