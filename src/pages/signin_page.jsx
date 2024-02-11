@@ -1,5 +1,6 @@
 import React, { useState, useLayoutEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import { useUser } from '../../src/UserContext';
 import './signin_page.css'; 
 import logo from '../assets/CineShare Logo Request.webp';
 
@@ -7,6 +8,9 @@ function SigninPage({ setShowNavbar }) {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { updateUser } = useUser();
+
+    const userContext = useUser();
 
     const navigateHome = () => {
         navigate('/home_page');
@@ -18,12 +22,32 @@ function SigninPage({ setShowNavbar }) {
         setShowNavbar(true);
     }
 
+    const getUsernameFromEmail = (email) => {
+        const userMapping = {
+            'austin@gmail.com': 'Austin Gan',
+            'yco@gmail.com': 'Yco Santos',
+            'philipp@gmail.com': 'Philipp Matthew Suarez',
+            'javi@gmail.com': 'Javi del Rosario',
+            'moist@gmail.com': 'Charles White'
+        };
+    
+        return userMapping[email] || ''; 
+    };
+
     const handleLogin = (event) => {
         event.preventDefault();
         console.log('Login with:', email, password);
-        navigateHome(); 
-    }
+        const username = getUsernameFromEmail(email);
+        console.log('Username:', username);
+        userContext.updateUser(username);
+        console.log('User Context after login:', userContext);
+        navigateHome();
+      };
+      
 
+      
+
+    
     useLayoutEffect(() => {
         setShowNavbar(false);
     }, [])
