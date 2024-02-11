@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './HomePage.css';
+import { Link } from 'react-router-dom'
 import './Post.css';
 import CommentPopup from './CommentPopup';
 
@@ -24,8 +25,11 @@ function Post({ post }) {
     
     return (
         <div className = "post">
-            
-            <h4>{post.user}</h4>
+            <h4>
+                <Link to={`/profile/${post.user}`} className="post-username">
+                    {post.user}
+                </Link>
+            </h4>
             <p>{post.content}</p>
             {post.imageUrl && (
                 <img src={post.imageUrl} alt="Post visual" className="post-image" />
