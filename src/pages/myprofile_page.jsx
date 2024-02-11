@@ -38,10 +38,10 @@ function myprofile_page() {
 
     const [posts, setPosts] = React.useState([
         { id: 1, user: 'Yco Santos', content: 'I love 500 days of summer it makes me sad LOL.', timestamp: '2024-22-02' },
-        { id: 1, user: 'Yco Santos', content: 'Its so over :((', timestamp: '2024-16-02' },
-        { id: 1, user: 'Yco Santos', content: 'IM TWEAKING RAAHHHHH', timestamp: '2024-11-02' },
-        { id: 1, user: 'Yco Santos', content: 'MINEcraft is my favorite game! <3 :D', timestamp: '2024-09-02' },
-        { id: 1, user: 'Yco Santos', content: 'WE ARE SO UP GRAH!', imageUrl: 'https://i.redd.it/t5dmyn6ll49a1.jpg', timestamp: '2024-01-02' },
+        { id: 2, user: 'Yco Santos', content: 'Its so over :((', timestamp: '2024-16-02' },
+        { id: 3, user: 'Yco Santos', content: 'IM TWEAKING RAAHHHHH', timestamp: '2024-11-02' },
+        { id: 4, user: 'Yco Santos', content: 'MINEcraft is my favorite game! <3 :D', timestamp: '2024-09-02' },
+        { id: 5, user: 'Yco Santos', content: 'WE ARE SO UP GRAH!', imageUrl: 'https://i.redd.it/t5dmyn6ll49a1.jpg', timestamp: '2024-01-02' },
     ]);
 
     return (
