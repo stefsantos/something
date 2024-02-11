@@ -52,9 +52,7 @@ function myprofile_page() {
                         Edit Profile
                     </button>
 
-                    <button className="button more_profile">
-                        ...
-                    </button>
+                    
                 </div>
                 
                 <div className="post_container">
