@@ -83,7 +83,7 @@ function CreateAcctPage({ setShowNavbar }) {
                               required
                           />
                       </div>
-                      <button type="submit" className="signup-button">
+                      <button onClick={navigateSignIn} type="submit" className="signup-button">
                           Create Account
                       </button>
                   </form>

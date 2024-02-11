@@ -38,7 +38,7 @@ function App() {
             <Route path="/movie/:id" element={<ContentContainer><MovieDetail /></ContentContainer>} />
             
             <Route path="/friends_page" element={<PlaceholderContainer><Friends /></PlaceholderContainer>} />
-            <Route path="/watchlist_page" element={<PlaceholderContainer><Watchlist /></PlaceholderContainer>} />
+            <Route path="/watchlist_page" element={<ContentContainer><Watchlist /></ContentContainer>} />
             <Route path="/myprofile_page" element={<PlaceholderContainer><MyProfile /></PlaceholderContainer>} />
             <Route path="/signin_page" element={<PlaceholderContainer><Signin setShowNavbar={setShowNavbar}/></PlaceholderContainer>} />   
             <Route path="/createacct_page" element={<PlaceholderContainer><CreateAcct setShowNavbar={setShowNavbar}/></PlaceholderContainer>} />

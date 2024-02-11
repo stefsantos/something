@@ -4,7 +4,7 @@
     border: 5px solid rgb(98, 98, 98);
     padding: 10px;
     margin: 10px;
-    width: 100%;
+    width: 95%;
     max-width: 800px;
     box-sizing: border-box;
     text-align: left;
@@ -12,6 +12,7 @@
     background-color: rgb(98, 98, 98);
     color: rgb(255, 255, 255);
     flex-direction: column;
+    display: flex;
 }
 
 .post img {

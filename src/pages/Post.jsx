@@ -7,7 +7,6 @@ function Post({ post }) {
     
     const [isHeartActive, setIsHeartActive] = useState(false);
     const [showComments, setShowComments] = useState(false);
-
     // Event handler for clicking the heart icon
     const toggleHeart = () => {
         setIsHeartActive(!isHeartActive);

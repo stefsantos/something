@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './myprofile_page.css';
 import { Link } from 'react-router-dom';
 import EditProfileTab from '../../src/pages/editprofile_tab';
+import Post from './Post';
 
 function myprofile_page() {
 
@@ -35,6 +36,14 @@ function myprofile_page() {
         toggleEditProfileTab();
     };
 
+    const [posts, setPosts] = React.useState([
+        { id: 1, user: 'Yco Santos', content: 'I love 500 days of summer it makes me sad LOL.', timestamp: '2024-22-02' },
+        { id: 2, user: 'Yco Santos', content: 'Its so over :((', timestamp: '2024-16-02' },
+        { id: 3, user: 'Yco Santos', content: 'IM TWEAKING RAAHHHHH', timestamp: '2024-11-02' },
+        { id: 4, user: 'Yco Santos', content: 'MINEcraft is my favorite game! <3 :D', timestamp: '2024-09-02' },
+        { id: 5, user: 'Yco Santos', content: 'WE ARE SO UP GRAH!', imageUrl: 'https://i.redd.it/t5dmyn6ll49a1.jpg', timestamp: '2024-01-02' },
+    ]);
+
     return (
         <div className="page">
             <div className="content_container">
@@ -56,7 +65,9 @@ function myprofile_page() {
                 </div>
                 
                 <div className="post_container">
-                    hi
+                    {posts.map(post => (
+                        <Post key={post.id} post={post} />
+                    ))}
                 </div>
 
                 <div className="favorites_container">
