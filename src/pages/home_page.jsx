@@ -29,6 +29,12 @@ function HomePage() {
             content: 'WE ARE SO UP GRAH!', 
             imageUrl: 'https://i.redd.it/t5dmyn6ll49a1.jpg', 
             timestamp: '2024-01-02' 
+        },
+        { id: 4, 
+            user: 'Charles White', 
+            content: 'Welcome to CineShare', 
+            imageUrl: 'https://steamuserimages-a.akamaihd.net/ugc/1917988387301425979/46D7B0946719773C99D4F521A656CE14A395AFE1/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false', 
+            timestamp: '2024-01-02' 
         }
     ];
 
