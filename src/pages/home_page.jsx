@@ -34,9 +34,9 @@ function HomePage() {
         },
         { id: 4, 
             user: 'Charles White', 
-            content: 'Welcome to CineShare', 
-            movie: 'Evangelion: 3.0+1.0 Thrice Upon a Time',
-            movieId: 283566,
+            content: 'This is the greatest moon falling of All Time', 
+            movie: 'Moonfall',
+            movieId: 406759,
             imageUrl: 'https://steamuserimages-a.akamaihd.net/ugc/1917988387301425979/46D7B0946719773C99D4F521A656CE14A395AFE1/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false', 
             timestamp: '2024-01-02' 
         }

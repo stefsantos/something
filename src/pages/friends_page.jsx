@@ -44,19 +44,19 @@ function friends_page() {
                 </div>
 
                 <div className="friendprofiles_container">
-{friendsData.map((friend) => (
-    // check if the friend username is different from the current activeusernafme
-    // if current user is Charles White, render Mutahar Anas (id: 6)
-    (friend.name !== activeusername && friend.id <= 5 || (activeusername === 'Charles White' && friend.id == 6)) && (
-        <div key={friend.id} className="friend_profile">
-            <img src={friend.avatar} alt="avatar" className="friend_avatar" />
-            <div className="friend_name">
-                {friend.name}
-            </div>
-            <Link to={friend.profileLink} className="visit_button">Visit</Link>
-        </div>
-    )
-))}
+                    {friendsData.map((friend) => (
+                        // check if the friend username is different from the current activeusernafme
+                        // if current user is Charles White, render Mutahar Anas (id: 6)
+                        (friend.name !== activeusername && friend.id <= 5 || (activeusername === 'Charles White' && friend.id == 6)) && (
+                            <div key={friend.id} className="friend_profile">
+                                <img src={friend.avatar} alt="avatar" className="friend_avatar" />
+                                <div className="friend_name" data-fullname={friend.name} title={friend.name}>
+                                    {friend.name}
+                                </div>
+                                <Link to={friend.profileLink} className="visit_button">Visit</Link>
+                            </div>
+                        )
+                    ))}
                 </div>
             </div>
       <div className="request_container">
