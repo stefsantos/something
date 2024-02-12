@@ -31,6 +31,7 @@ function SigninPage({ setShowNavbar }) {
             'philipp@gmail.com': 'Philipp Matthew Suarez',
             'javi@gmail.com': 'Javi del Rosario',
             'moist@gmail.com': 'Charles White',
+            'mutahar@gmail.com': 'Mutahar Anas',
         };
     
         return userMapping[email] || ''; 
@@ -65,6 +66,7 @@ function SigninPage({ setShowNavbar }) {
                 'philipp@gmail.com': 'philipppassword',
                 'javi@gmail.com': 'javipassword',
                 'moist@gmail.com': 'moistpassword',
+                'mutahar@gmail.com': 'mutaharpassword',
             };
         
             return userPasswordMapping[email] === enteredPassword;

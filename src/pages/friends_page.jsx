@@ -17,11 +17,11 @@ const friendsData = [
 // Mock data for friend requests
 const friendRequestsData = [
     { id: 1, name: 'Mutahar Anas', avatar: 'images/muta.png', mutualContacts: 1 },
-    { id: 2, name: 'zookee76', avatar: 'https://avatars.githubusercontent.com/u/135536455?v=4', mutualContacts: 0 },
-    { id: 3, name: 'Sn3s', avatar: 'https://avatars.githubusercontent.com/u/84768613?v=4', mutualContacts: 0 },
-    { id: 4, name: 'KAFuccino', avatar: 'https://avatars.githubusercontent.com/u/139977647?v=4', mutualContacts: 0 },
-    { id: 5, name: 'Phrezie', avatar: 'https://avatars.githubusercontent.com/u/140799319?v=4', mutualContacts: 0 },
-    { id: 6, name: 'mufasa', avatar: 'images/lion.jpg', mutualContacts: 3 },
+    { id: 2, name: 'Austin Gan', avatar: 'images/austin.jpg', mutualContacts: 1 },
+    { id: 3, name: 'Philipp Matthew Suarez', avatar: 'images/philipp.jpg', mutualContacts: 1 },
+    { id: 4, name: 'Javi del Rosario', avatar: 'images/javi.jpg', mutualContacts: 1 },
+    { id: 5, name: 'Charles White', avatar: 'images/moist.png', mutualContacts: 1},
+    { id: 6, name: 'Yco Santos', avatar: 'images/yco.png', mutualContacts: 1},
   ];
 
 
@@ -49,26 +49,26 @@ function friends_page() {
                 </div>
 
                 <div className="friendprofiles_container">
-                    {friendsData.map((friend) => (
-                        // check if the friend username is different from the current activeusernafme
-                        // if current user is Charles White, render Mutahar Anas (id: 6)
-                        (friend.name !== activeusername && friend.id <= 5 || (activeusername === 'Charles White' && friend.id == 6)) && (
-                            <div key={friend.id} className="friend_profile">
-                                <img src={friend.avatar} alt="avatar" className="friend_avatar" />
-                                <div className="friend_name" data-fullname={friend.name} title={friend.name}>
-                                    {friend.name}
-                                </div>
-                                <Link to={friend.profileLink} className="visit_button">Visit</Link>
-                            </div>
-                        )
-                    ))}
+{friendsData.map((friend) => (
+    // check if the friend username is different from the current activeusernafme
+    // if current user is Charles White, render Mutahar Anas (id: 6)
+    (friend.name !== activeusername && friend.id <= 5 && activeusername !== 'Mutahar Anas' || (activeusername === 'Charles White' && friend.id == 6) || (activeusername == 'Mutahar Anas' && friend.name !== activeusername && friend.id >= 5)) && (
+        <div key={friend.id} className="friend_profile">
+            <img src={friend.avatar} alt="avatar" className="friend_avatar" />
+            <div className="friend_name">
+                {friend.name}
+            </div>
+            <Link to={friend.profileLink} className="visit_button">Visit</Link>
+        </div>
+    )
+))}
                 </div>
             </div>
       <div className="request_container">
         <div className="request_header">Friend Requests</div>
         <div className="friendrequest_container">
           {friendRequests.map((request) => (
-            (activeusername !== 'Charles White' || activeusername === 'Charles White' && request.name !== 'Mutahar Anas') && (
+            ((activeusername !== 'Charles White' && activeusername !== 'Mutahar Anas' && request.name === 'Mutahar Anas') || (activeusername === 'Mutahar Anas' && request.id >= 2 && request.id !== 5)) && (
               <div key={request.id} className="friend_request">
                 <img src={request.avatar} alt="avatar" className="request_avatar" />
                 <div className="request_text">

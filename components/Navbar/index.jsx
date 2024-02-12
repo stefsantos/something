@@ -110,6 +110,17 @@ const Navbar = () => {
                         alt="Charles White Profile"
                     />
                 )}
+                 {activeusername === 'Mutahar Anas' && (
+                    <img src="images/muta.png" height="75"
+                        style={{
+                            borderRadius: '50%',
+                            width: '75px',
+                            height: '75px',
+                            objectFit: 'cover'
+                        }}
+                        alt="Mutahar Anas Profile"
+                    />
+                )}
             </NavLink>
                     <NavLink to="signin_page">
                        ⎗ Logout
