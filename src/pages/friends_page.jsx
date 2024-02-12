@@ -20,6 +20,8 @@ const friendRequestsData = [
     { id: 2, name: 'zookee76', avatar: 'https://avatars.githubusercontent.com/u/135536455?v=4', mutualContacts: 0 },
     { id: 3, name: 'Sn3s', avatar: 'https://avatars.githubusercontent.com/u/84768613?v=4', mutualContacts: 0 },
     { id: 4, name: 'KAFuccino', avatar: 'https://avatars.githubusercontent.com/u/139977647?v=4', mutualContacts: 0 },
+    { id: 5, name: 'Phrezie', avatar: 'https://avatars.githubusercontent.com/u/140799319?v=4', mutualContacts: 0 },
+    { id: 6, name: 'mufasa', avatar: 'images/lion.jpg', mutualContacts: 3 },
   ];
 
 
