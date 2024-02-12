@@ -11,6 +11,7 @@ const profileAvatars = {
     'Philipp Matthew Suarez': '../images/philipp.jpg',
     'Javi del Rosario': '../images/javi.jpg',
     'Charles White': '../images/moist.png',
+    'Mutahar Anas': '../images/muta.png',
   };
 
   function profile2_page() {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './friends_page.css';
 import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -11,11 +11,26 @@ const friendsData = [
     { id: 3, name: 'Philipp Matthew Suarez', avatar: 'images/philipp.jpg', profileLink: '/profile/Philipp Matthew Suarez' },
     { id: 4, name: 'Javi del Rosario', avatar: 'images/javi.jpg', profileLink: '/profile/Javi del Rosario' },
     { id: 5, name: 'Charles White', avatar: 'images/moist.png', profileLink: '/profile/Charles White' },
+    { id: 6, name: 'Mutahar Anas', avatar: 'images/muta.png', profileLink: '/profile/Mutahar Anas' },
 ];
 
+// Mock data for friend requests
+const friendRequestsData = [
+    { id: 1, name: 'Mutahar Anas', avatar: 'images/muta.png', mutualContacts: 1 },
+  ];
+
+
 function friends_page() {
-    const { activeusername } = useUser();
-    console.log('Username:', activeusername);
+  const { activeusername } = useUser();
+  const [friendRequests, setFriendRequests] = useState(friendRequestsData);
+
+  const handleAccept = (id) => {
+    setFriendRequests((prevRequests) => prevRequests.filter((request) => request.id !== id));
+  };
+
+  const handleDecline = (id) => {
+    setFriendRequests((prevRequests) => prevRequests.filter((request) => request.id !== id));
+  };
 
     return (
         <div className="page_container">
@@ -29,127 +44,60 @@ function friends_page() {
                 </div>
 
                 <div className="friendprofiles_container">
-                    {friendsData.map((friend) => (
-                        // Check if the friend's username is different from the current user's username
-                        // If it's the same, don't render the friend profile
-                        friend.name !== activeusername && (
-                            <div key={friend.id} className="friend_profile">
-                                <img src={friend.avatar} alt="avatar" className="friend_avatar" />
-                                <div className="friend_name">
-                                    {friend.name}
-                                </div>
-                                <Link to={friend.profileLink} className="visit_button">Visit</Link>
-                            </div>
-                        )
-                    ))}
-                </div>
+{friendsData.map((friend) => (
+    // check if the friend username is different from the current activeusernafme
+    // if current user is Charles White, render Mutahar Anas (id: 6)
+    (friend.name !== activeusername && friend.id <= 5 || (activeusername === 'Charles White' && friend.id == 6)) && (
+        <div key={friend.id} className="friend_profile">
+            <img src={friend.avatar} alt="avatar" className="friend_avatar" />
+            <div className="friend_name">
+                {friend.name}
             </div>
-            <div className="request_container">
-                <div className="request_header">
-                    Friend Requests
-                </div>
-
-                <div className="friendrequest_container">
-                    
-                    <div className="friend_request">
-                        <img src="images/Screenshot_16.png" alt="avatar" className="request_avatar" />
-                        <div className="request_text">
-                            <div className="request_name">
-                                Yco Santos
-                            </div>
-                            <div className="mutual_box">
-                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
-                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
-                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
-                                <div className="mutual_text">
-                                    3 Mutual Contacts
-                                </div>
-                            </div>
-                        </div>
-                        <button className="decline_button">Decline</button>
-                        <button className="accept_button">Accept</button>
-                    </div>
-
-                    <div className="friend_request">
-                        <img src="images/Screenshot_16.png" alt="avatar" className="request_avatar" />
-                        <div className="request_text">
-                            <div className="request_name">
-                                Yco Santos
-                            </div>
-                            <div className="mutual_box">
-                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
-                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
-                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
-                                <div className="mutual_text">
-                                    3 Mutual Contacts
-                                </div>
-                            </div>
-                        </div>
-                        <button className="decline_button">Decline</button>
-                        <button className="accept_button">Accept</button>
-                    </div>
-
-                    <div className="friend_request">
-                        <img src="images/Screenshot_16.png" alt="avatar" className="request_avatar" />
-                        <div className="request_text">
-                            <div className="request_name">
-                                Yco Santos
-                            </div>
-                            <div className="mutual_box">
-                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
-                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
-                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
-                                <div className="mutual_text">
-                                    3 Mutual Contacts
-                                </div>
-                            </div>
-                        </div>
-                        <button className="decline_button">Decline</button>
-                        <button className="accept_button">Accept</button>
-                    </div>
-
-                    <div className="friend_request">
-                        <img src="images/Screenshot_16.png" alt="avatar" className="request_avatar" />
-                        <div className="request_text">
-                            <div className="request_name">
-                                Yco Santos
-                            </div>
-                            <div className="mutual_box">
-                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
-                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
-                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
-                                <div className="mutual_text">
-                                    3 Mutual Contacts
-                                </div>
-                            </div>
-                        </div>
-                        <button className="decline_button">Decline</button>
-                        <button className="accept_button">Accept</button>
-                    </div>
-
-                    <div className="friend_request">
-                        <img src="images/Screenshot_16.png" alt="avatar" className="request_avatar" />
-                        <div className="request_text">
-                            <div className="request_name">
-                                Yco Santos
-                            </div>
-                            <div className="mutual_box">
-                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
-                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
-                                <img src="images/Screenshot_16.png" alt="avatar" className="mutual_avatar" />
-                                <div className="mutual_text">
-                                    3 Mutual Contacts
-                                </div>
-                            </div>
-                        </div>
-                        <button className="decline_button">Decline</button>
-                        <button className="accept_button">Accept</button>
-                    </div>
-                    {/* Repeat or map through actual friend requests here */}
-                </div>
-            </div>
+            <Link to={friend.profileLink} className="visit_button">Visit</Link>
         </div>
-    );
+    )
+))}
+                </div>
+            </div>
+      <div className="request_container">
+        <div className="request_header">Friend Requests</div>
+        <div className="friendrequest_container">
+          {friendRequests.map((request) => (
+            (activeusername !== 'Charles White' && request.name === 'Mutahar Anas') && (
+              <div key={request.id} className="friend_request">
+                <img src={request.avatar} alt="avatar" className="request_avatar" />
+                <div className="request_text">
+                  <div className="request_name">{request.name}</div>
+                  <div className="mutual_box">
+                    {Array.from({ length: request.mutualContacts }).map((_, index) => (
+                      <img key={index} src="images/moist.png" alt="avatar" className="mutual_avatar" />
+                    ))}
+                    <div className="mutual_text">{request.mutualContacts} Mutual Contacts</div>
+                  </div>
+                </div>
+                <button
+                  className="decline_button"
+                  onClick={() => {
+                    handleDecline(request.id);
+                  }}
+                >
+                  Decline
+                </button>
+                <button
+                  className="accept_button"
+                  onClick={() => {
+                    handleAccept(request.id);
+                  }}
+                >
+                  Accept
+                </button>
+              </div>
+            )
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default friends_page;

@@ -9,7 +9,7 @@ function SigninPage({ setShowNavbar }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
-    const { updateUser } = useUser();
+
 
     
     const userContext = useUser();
@@ -30,7 +30,7 @@ function SigninPage({ setShowNavbar }) {
             'yco@gmail.com': 'Yco Santos',
             'philipp@gmail.com': 'Philipp Matthew Suarez',
             'javi@gmail.com': 'Javi del Rosario',
-            'moist@gmail.com': 'Charles White'
+            'moist@gmail.com': 'Charles White',
         };
     
         return userMapping[email] || ''; 
@@ -64,7 +64,7 @@ function SigninPage({ setShowNavbar }) {
                 'yco@gmail.com': 'ycopassword',
                 'philipp@gmail.com': 'philipppassword',
                 'javi@gmail.com': 'javipassword',
-                'moist@gmail.com': 'moistpassword'
+                'moist@gmail.com': 'moistpassword',
             };
         
             return userPasswordMapping[email] === enteredPassword;
