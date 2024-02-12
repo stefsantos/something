@@ -15,6 +15,18 @@ const EditProfileTab = ({ isVisible, onClose }) => {
         <div className="modal-content">
           <input className="modal-input" type="text" placeholder="Change Profile Name" />
           <textarea className="modal-input" placeholder="Change Bio"></textarea>
+          <div className = "modal-header" >
+          <h2>Set Favorites</h2>
+          </div>
+          <div className="grid-3x3">
+            <div className="grid-item">+</div>
+            <div className="grid-item">+</div>
+            <div className="grid-item">+</div>
+            <div className="grid-item">+</div>
+            <div className="grid-item">+</div>
+            <div className="grid-item">+</div>
+          </div>
+          {/* 3x3 Grid End */}
         </div>
         <div className="modal-footer">
           <button className="button cancel-button" onClick={onClose}>Cancel</button>
@@ -24,5 +36,6 @@ const EditProfileTab = ({ isVisible, onClose }) => {
     </div>
   );
 };
+
 
 export default EditProfileTab;

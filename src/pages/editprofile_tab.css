@@ -79,3 +79,27 @@ color: rgb(239, 239, 239);
 background-color: #E6E6E6;
 color: rgb(51, 51, 51);
 }
+
+.grid-3x3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates three columns */
+    grid-gap: 20px; /* Adjusts the gap between grid items */
+    margin-top: 20px; /* Adds some space above the grid */
+  }
+  
+  .grid-item {
+    background-color: #363636; /* Light grey background, adjust as needed */
+    padding: 50px; /* Adds some padding inside each grid item */
+    height: 100px; /* Sets the height of each grid item */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd; /* Adds a light border around each grid item */
+  }
+
+  .grid-item:hover {
+    
+    transform: scale(1.05);
+
+  }
+  
