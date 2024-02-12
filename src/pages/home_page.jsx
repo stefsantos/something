@@ -75,7 +75,7 @@ function HomePage() {
     return (
         <>
             <div className='title'>
-                <h1>Cineshare</h1>
+                <h1>CineShare</h1>
                 <h2>Home</h2>
             </div>
             

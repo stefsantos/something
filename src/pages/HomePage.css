@@ -23,10 +23,44 @@
     width: 100%;
     justify-content: center;
     display: flex;
-    padding: 20px;
+    margin-top: 10px;
     padding-left: 20px;
-    background-color: rgb(36, 36, 36);
+    animation: fadeIn 1.5s ease-out forwards; /* Use 'forwards' to keep the final state of the animation */
+    color: #FFFFFF; /* Set text color to white */
 }
+
+.title.fade-in-complete {
+    animation: none; /* Disable the fadeIn animation once the additional class is added */
+}
+
+.title:hover {
+    color: #A949F5; /* Set initial color */
+    animation: wavePurple 1.5s infinite alternate; /* Use a waving animation */
+}
+
+@keyframes wavePurple {
+    from {
+        color: #A949F5; /* Initial color */
+        transform: rotate(-5deg); /* Rotate slightly to the left */
+    }
+    to {
+        color: #A949F5; /* Final color */
+        transform: rotate(5deg); /* Rotate slightly to the right */
+    }
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .userposts {
     padding-right: 10px; 
