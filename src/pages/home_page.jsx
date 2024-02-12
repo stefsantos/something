@@ -26,14 +26,26 @@ function HomePage() {
         },
         { id: 3, 
             user: 'Yco Santos', 
+            movie: 'Evangelion: 3.0+1.0 Thrice Upon a Time',
+            movieId: 283566,
             content: 'WE ARE SO UP GRAH!', 
             imageUrl: 'https://i.redd.it/t5dmyn6ll49a1.jpg', 
             timestamp: '2024-01-02' 
         },
         { id: 4, 
             user: 'Charles White', 
-            content: 'Welcome to CineShare', 
+            content: 'This is the greatest moon falling of All Time', 
+            movie: 'Moonfall',
+            movieId: 406759,
             imageUrl: 'https://steamuserimages-a.akamaihd.net/ugc/1917988387301425979/46D7B0946719773C99D4F521A656CE14A395AFE1/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false', 
+            timestamp: '2024-01-02' 
+        },
+        { id: 5, 
+            user: 'Mutahar Anas', 
+            content: 'This movie made me cry like no other.', 
+            movie: 'The SpongeBob Movie: Sponge on the Run',
+            movieId: 400160,
+            imageUrl: 'https://wallpapers.com/images/hd/sad-spongebob-3eg7eq1ll0sflfo7.jpg', 
             timestamp: '2024-01-02' 
         }
     ];

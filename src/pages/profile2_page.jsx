@@ -3,11 +3,24 @@ import './myprofile_page.css';
 import { Link, useParams } from 'react-router-dom';
 import EditProfileTab from '../../src/pages/editprofile_tab';
 import Post from './Post';
+import { useUser } from '../../src/UserContext';
 
-function profile2_page() {
+const profileAvatars = {
+    'Yco Santos': '../images/yco.png',
+    'Austin Gan': '../images/austin.jpg',
+    'Philipp Matthew Suarez': '../images/philipp.jpg',
+    'Javi del Rosario': '../images/javi.jpg',
+    'Charles White': '../images/moist.png',
+    'Mutahar Anas': '../images/muta.png',
+  };
 
+  function profile2_page() {
     const [trendingMovies, setTrendingMovies] = React.useState([]);
     const { username } = useParams();
+    const [isEditProfileTabVisible, setIsEditProfileTabVisible] = useState(false);
+    const { activeusername } = useUser();
+    console.log('Username:', username);
+    console.log('Active Username:', activeusername);
 
     React.useEffect(() => {
         const fetchTrendingMovies = async () => {
@@ -26,7 +39,6 @@ function profile2_page() {
         fetchTrendingMovies();
     }, []);
 
-    const [isEditProfileTabVisible, setIsEditProfileTabVisible] = useState(false);
 
     const toggleEditProfileTab = () => {
         setIsEditProfileTabVisible(!isEditProfileTabVisible);
@@ -38,61 +50,39 @@ function profile2_page() {
     };
 
     const [posts, setPosts] = React.useState([
-        { id: 1, user: username, content: 'I love 500 days of summer it makes me sad LOL.', timestamp: '2024-22-02' },
-        { id: 2, user: username, content: 'Its so over :((', timestamp: '2024-16-02' },
-        { id: 3, user: username, content: 'IM TWEAKING RAAHHHHH', timestamp: '2024-11-02' },
-        { id: 4, user: username, content: 'MINEcraft is my favorite game! <3 :D', timestamp: '2024-09-02' },
-        { id: 5, user: username, content: 'WE ARE SO UP GRAH!', imageUrl: 'https://i.redd.it/t5dmyn6ll49a1.jpg', timestamp: '2024-01-02' },
+        { id: 1, user: username, movie: '(500) Days of Summer', movieId: '19913', content: 'I love 500 days of summer it makes me sad LOL.', timestamp: '2024-22-02' },
+        { id: 2, user: username, movie: 'Her', movieId: '152601', content: 'Its so over :((', timestamp: '2024-16-02' },
+        { id: 3, user: username, movie: 'The Boy and the Heron', movieId: '508883', content: 'IM TWEAKING RAAHHHHH', timestamp: '2024-11-02' },
+        { id: 4, user: username, movie: 'Minecraft: The Story of Mojang', movieId: '151870', content: 'MINEcraft is my favorite game! <3 :D', timestamp: '2024-09-02' },
+        { id: 5, user: username, movie: 'About Time', movieId: '122906', content: 'WE ARE SO UP GRAH!', imageUrl: 'https://i.redd.it/t5dmyn6ll49a1.jpg', timestamp: '2024-01-02' },
     ]);
 
+    const isCurrentUser = activeusername === username;
+
+    const renderEditProfileButton = () => {
+        if (isCurrentUser==0) {
+            return <button className="button edit_profile">✓ Already Friends</button>;
+        } else {
+            return <button className="button edit_profile" onClick={handleEditProfileClick}>Edit Profile</button>;
+        }
+    };
+
     return (
-        <div className="page">
+            <div className="page">
             <div className="content_container">
             <div className="profile_container">
-
-                    {username === 'Yco Santos' && (
-                        <img src="images/yco.png" className="profile_banner" alt="Yco Santos" />
-                    )}
-                    {username === 'Austin Gan' && (
-                        <img src="images/austin.jpg" className="profile_banner" alt="Austin Gan" />
-                    )}
-                    {username === 'Philipp Matthew Suarez' && (
-                        <img src="images/philipp.jpg" className="profile_banner" alt="Philipp Matthew Suarez" />
-                    )}
-                    {username === 'Javi del Rosario' && (
-                        <img src="images/javi.jpg" className="profile_banner" alt="Javi del Rosario" />
-                    )}
-                    {username === 'Charles White' && (
-                        <img src="images/moist.png" className="profile_banner" alt="Charles White" />
-                    )}
-
-                    {username === 'Yco Santos' && (
-                        <img src="images/yco.png" className="profile_avatar avatar" alt="Yco Santos" />
-                    )}
-                    {username === 'Austin Gan' && (
-                        <img src="images/austin.jpg" className="profile_avatar avatar" alt="Austin Gan" />
-                    )}
-                    {username === 'Philipp Matthew Suarez' && (
-                        <img src="images/philipp.jpg" className="profile_avatar avatar" alt="Philipp Matthew Suarez" />
-                    )}
-                    {username === 'Javi del Rosario' && (
-                        <img src="images/javi.jpg" className="profile_avatar avatar" alt="Javi del Rosario" />
-                    )}
-                    {username === 'Charles White' && (
-                        <img src="images/moist.png" className="profile_avatar avatar" alt="Charles White" />
-                    )}
-
-                    <div className="profile_name">
-                        {username}
-                    </div>
-
-                    <div className="profile_bio">
-                        I am CCS ID 122 
-                    </div>
-
-                    <button className="button edit_profile" onClick={handleEditProfileClick}>
-                        Edit Profile
-                    </button>
+                {profileAvatars[username] && (
+                <img src={profileAvatars[username]} className="profile_banner" alt={username} />
+                )}
+    
+                {profileAvatars[username] && (
+                <img src={profileAvatars[username]} className="profile_avatar avatar" alt={username} />
+                )}
+    
+                <div className="profile_name">{username}</div>
+                <div className="profile_bio">I am CCS ID 122</div>
+    
+                {renderEditProfileButton()}
 
                     
                 </div>

@@ -8,9 +8,10 @@ function SigninPage({ setShowNavbar }) {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const { updateUser } = useUser();
     const [errorMessage, setErrorMessage] = useState('');
 
+
+    
     const userContext = useUser();
 
     const navigateHome = () => {
@@ -29,7 +30,8 @@ function SigninPage({ setShowNavbar }) {
             'yco@gmail.com': 'Yco Santos',
             'philipp@gmail.com': 'Philipp Matthew Suarez',
             'javi@gmail.com': 'Javi del Rosario',
-            'moist@gmail.com': 'Charles White'
+            'moist@gmail.com': 'Charles White',
+            'mutahar@gmail.com': 'Mutahar Anas',
         };
     
         return userMapping[email] || ''; 
@@ -40,14 +42,14 @@ function SigninPage({ setShowNavbar }) {
         const handleLogin = (event) => {
             event.preventDefault();
             console.log('Login with:', email, password);
-            const username = getUsernameFromEmail(email);
+            const activeusername = getUsernameFromEmail(email);
         
 
             const isPasswordCorrect = checkPassword(email, password);
         
             if (isPasswordCorrect) {
-                console.log('Username:', username);
-                userContext.updateUser(username);
+                console.log('Username:', activeusername);
+                userContext.updateUser(activeusername);
                 console.log('User Context after login:', userContext);
                 navigateHome();
             } else {
@@ -63,7 +65,8 @@ function SigninPage({ setShowNavbar }) {
                 'yco@gmail.com': 'ycopassword',
                 'philipp@gmail.com': 'philipppassword',
                 'javi@gmail.com': 'javipassword',
-                'moist@gmail.com': 'moistpassword'
+                'moist@gmail.com': 'moistpassword',
+                'mutahar@gmail.com': 'mutaharpassword',
             };
         
             return userPasswordMapping[email] === enteredPassword;

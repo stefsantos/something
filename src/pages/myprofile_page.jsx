@@ -5,11 +5,38 @@ import EditProfileTab from '../../src/pages/editprofile_tab';
 import Post from './Post';
 import { useUser } from '../../src/UserContext';
 
+const profileData = {
+    'Yco Santos': {
+      banner: 'images/yco.png',
+      avatar: 'images/yco.png',
+    },
+    'Austin Gan': {
+      banner: 'images/austin.jpg',
+      avatar: 'images/austin.jpg',
+    },
+    'Philipp Matthew Suarez': {
+      banner: 'images/philipp.jpg',
+      avatar: 'images/philipp.jpg',
+    },
+    'Javi del Rosario': {
+      banner: 'images/javi.jpg',
+      avatar: 'images/javi.jpg',
+    },
+    'Charles White': {
+      banner: 'images/moist.png',
+      avatar: 'images/moist.png',
+    },
+    'Mutahar Anas': {
+        banner: 'images/muta.png',
+        avatar: 'images/muta.png',
+      },
+  };
+
 function myprofile_page() {
 
     const [trendingMovies, setTrendingMovies] = React.useState([]);
-    const { username } = useUser();
-    console.log('Username:', username);
+    const { activeusername } = useUser();
+    console.log('Username:', activeusername);
     
     React.useEffect(() => {
         const fetchTrendingMovies = async () => {
@@ -40,57 +67,29 @@ function myprofile_page() {
     };
 
     const [posts, setPosts] = React.useState([
-        { id: 1, user: username, movie: '(500) Days of Summer', movieId: '19913', content: 'I love 500 days of summer it makes me sad LOL.', timestamp: '2024-22-02' },
-        { id: 2, user: username, movie: 'Her', movieId: '152601', content: 'Its so over :((', timestamp: '2024-16-02' },
-        { id: 3, user: username, movie: 'The Boy and the Heron', movieId: '508883', content: 'IM TWEAKING RAAHHHHH', timestamp: '2024-11-02' },
-        { id: 4, user: username, movie: 'Minecraft: The Story of Mojang', movieId: '151870', content: 'MINEcraft is my favorite game! <3 :D', timestamp: '2024-09-02' },
-        { id: 5, user: username, movie: 'About Time', movieId: '122906', content: 'WE ARE SO UP GRAH!', imageUrl: 'https://i.redd.it/t5dmyn6ll49a1.jpg', timestamp: '2024-01-02' },
+        { id: 1, user: activeusername, movie: '(500) Days of Summer', movieId: '19913', content: 'I love 500 days of summer it makes me sad LOL.', timestamp: '2024-22-02' },
+        { id: 2, user: activeusername, movie: 'Her', movieId: '152601', content: 'Its so over :((', timestamp: '2024-16-02' },
+        { id: 3, user: activeusername, movie: 'The Boy and the Heron', movieId: '508883', content: 'IM TWEAKING RAAHHHHH', timestamp: '2024-11-02' },
+        { id: 4, user: activeusername, movie: 'Minecraft: The Story of Mojang', movieId: '151870', content: 'MINEcraft is my favorite game! <3 :D', timestamp: '2024-09-02' },
+        { id: 5, user: activeusername, movie: 'About Time', movieId: '122906', content: 'WE ARE SO UP GRAH!', imageUrl: 'https://i.redd.it/t5dmyn6ll49a1.jpg', timestamp: '2024-01-02' },
     ]);
+
+    const userProfiles = profileData[activeusername];
 
     return (
         <div className="page">
-            <div className="content_container">
+        <div className="content_container">
             <div className="profile_container">
+            <img src={userProfiles?.banner} className="profile_banner" alt={activeusername} />
+            <img src={userProfiles?.avatar} className="profile_avatar avatar" alt={activeusername} />
 
-                    {username === username && (
-                        <img src="images/yco.png" className="profile_banner" alt="Yco Santos" />
-                    )}
-                    {username === 'Austin Gan' && (
-                        <img src="images/austin.jpg" className="profile_banner" alt="Austin Gan" />
-                    )}
-                    {username === 'Philipp Matthew Suarez' && (
-                        <img src="images/philipp.jpg" className="profile_banner" alt="Philipp Matthew Suarez" />
-                    )}
-                    {username === 'Javi del Rosario' && (
-                        <img src="images/javi.jpg" className="profile_banner" alt="Javi del Rosario" />
-                    )}
-                    {username === 'Charles White' && (
-                        <img src="images/moist.png" className="profile_banner" alt="Charles White" />
-                    )}
+            <div className="profile_name">
+                {activeusername}
+            </div>
 
-                    {username === username && (
-                        <img src="images/yco.png" className="profile_avatar avatar" alt="Yco Santos" />
-                    )}
-                    {username === 'Austin Gan' && (
-                        <img src="images/austin.jpg" className="profile_avatar avatar" alt="Austin Gan" />
-                    )}
-                    {username === 'Philipp Matthew Suarez' && (
-                        <img src="images/philipp.jpg" className="profile_avatar avatar" alt="Philipp Matthew Suarez" />
-                    )}
-                    {username === 'Javi del Rosario' && (
-                        <img src="images/javi.jpg" className="profile_avatar avatar" alt="Javi del Rosario" />
-                    )}
-                    {username === 'Charles White' && (
-                        <img src="images/moist.png" className="profile_avatar avatar" alt="Charles White" />
-                    )}
-
-                    <div className="profile_name">
-                        {username}
-                    </div>
-
-                    <div className="profile_bio">
-                        I am CCS ID 122 
-                    </div>
+            <div className="profile_bio">
+                I am CCS ID 122
+            </div>
 
                     <button className="button edit_profile" onClick={handleEditProfileClick}>
                         Edit Profile

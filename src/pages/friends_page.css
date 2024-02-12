@@ -83,7 +83,7 @@
     flex-direction: row;
     background-color: #1d1d1d;
     width: 40vw;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
@@ -98,6 +98,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-right: 20px;
 }
 
 .friend_avatar {
@@ -121,6 +122,10 @@
     font-weight: 700; 
     line-height: 26px; 
     color: white; /* neutral-900 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 85%;
 }
 
 .visit_button, .visit_button[href] {
@@ -217,7 +222,7 @@
 .friend_request {
     width: 100%; 
     height: 155px;
-    top: 124; 
+    top: 124px; 
     background: black; 
     border-radius: 4px; 
     box-shadow: 0px 0px 2px 2px #000000, 0px 0px 2px 2px #FFFFFF;
@@ -250,7 +255,7 @@
     height: 80%;
     width: 70%;
     justify-content: center;
-    align-items: left;
+
 }
 
 .request_name {
@@ -281,11 +286,12 @@
     border: none; 
     border-radius: 4px;
     margin-right: 20px; 
+    transition: background 0.3s ease, color 0.5s ease;
 }
 
 .decline_button:hover {
     color: #565E6CFF; 
-    background: #DEE1E6FF; 
+    background: #FF4C4CFF;
 }
 
 .decline_button:hover:active {
@@ -320,11 +326,12 @@
     border: none; 
     border-radius: 4px; 
     margin-right: 20px; 
+    transition: background 0.3s ease, color 0.5s ease;
 }
 
 .accept_button:hover {
     color: #FFFFFFFF; 
-    background: #B661F9;  
+    background: #4cdc9b;  
 }
 
 .accept_button:hover:active {
@@ -346,7 +353,7 @@
     width: 200px;
     height: 24px;
     justify-content: left;
-    align-items: left;
+
 }
 
 .mutual_avatar {
