@@ -29,26 +29,6 @@
     color: #FFFFFF; /* Set text color to white */
 }
 
-.title.fade-in-complete {
-    animation: none; /* Disable the fadeIn animation once the additional class is added */
-}
-
-.title:hover {
-    color: #A949F5; /* Set initial color */
-    animation: wavePurple 1.5s infinite alternate; /* Use a waving animation */
-}
-
-@keyframes wavePurple {
-    from {
-        color: #A949F5; /* Initial color */
-        transform: rotate(-5deg); /* Rotate slightly to the left */
-    }
-    to {
-        color: #A949F5; /* Final color */
-        transform: rotate(5deg); /* Rotate slightly to the right */
-    }
-}
-
 
 @keyframes fadeIn {
     from {
