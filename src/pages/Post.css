@@ -31,6 +31,22 @@
     color: rgb(255, 255, 255);
 }
 
+.post-username:hover {
+
+    color: rgb(140, 159, 254);
+}
+
+.post-movie {
+
+    color: #ca8dfc;
+
+}
+
+.post-movie:hover {
+
+    color: #bc6dfc;
+
+}
 
 .postactions {
     display: flex; 
@@ -40,6 +56,7 @@
 
 .heart, .comment, .share {
     margin-top: 10px;
+    margin-bottom: 10px;
     background-image: url('sprites2.png'); 
     cursor: pointer;
     width: 24px; 
