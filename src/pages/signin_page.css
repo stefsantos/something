@@ -19,11 +19,49 @@
 }
 
 .signin-side-bar img {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 20px;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 20px;
+  animation: fadeIn 1s ease-in-out, floatLogo 4s infinite ease-in-out;
 }
-  
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes floatLogo {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+  .signin-side-bar {
+    width: 0;
+    background-color: #101e33; 
+    height: 100%; 
+    color: #ffffff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: width 1s;
+  }
+
+  .signin-fullscreen:hover .signin-side-bar {
+    width: 40%;
+  }
+
+  .signin-fullscreen:hover .login-container {
+    margin-top: 0;
+  }
   
   .signin-container {
     width: 60%; 
@@ -31,8 +69,7 @@
     justify-content: center;
     align-items: center;
   }
-  
-  
+
   .login-container {
     background-color: #222831; 
     padding: 40px;
@@ -42,7 +79,9 @@
     max-width: 400px; 
     text-align: center;
     color: #EEEEEE; 
-  }
+    margin-top: -150%; 
+    transition: margin-top 1s ease-in-out 0.6s;
+}
   
  
   .login-form h2 {

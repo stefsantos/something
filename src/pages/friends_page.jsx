@@ -55,7 +55,7 @@ function friends_page() {
     (friend.name !== activeusername && friend.id <= 5 && activeusername !== 'Mutahar Anas' || (activeusername === 'Charles White' && friend.id == 6) || (activeusername == 'Mutahar Anas' && friend.name !== activeusername && friend.id >= 5)) && (
         <div key={friend.id} className="friend_profile">
             <img src={friend.avatar} alt="avatar" className="friend_avatar" />
-            <div className="friend_name">
+            <div className="friend_name" title={friend.name}>
                 {friend.name}
             </div>
             <Link to={friend.profileLink} className="visit_button">Visit</Link>

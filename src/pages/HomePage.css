@@ -23,21 +23,26 @@
     width: 100%;
     justify-content: center;
     display: flex;
-    margin-top: 10px;
-    padding-left: 20px;
-    animation: fadeIn 1.5s ease-out forwards; /* Use 'forwards' to keep the final state of the animation */
-    color: #FFFFFF; /* Set text color to white */
+    padding-left: 140px;
+    animation: appearAndStretch 2s ease-out forwards;
+    color: #FFFFFF;
+    background-color: #A949F5;
+    transform-origin: center;
+    opacity: 0;
 }
 
-
-@keyframes fadeIn {
-    from {
+@keyframes appearAndStretch {
+    0% {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: scaleX(0.2);
     }
-    to {
+    50% {
+        opacity: 0.8;
+        transform: scaleX(1.2);
+    }
+    100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: scaleX(1);
     }
 }
 
@@ -60,7 +65,23 @@
     font-size: 32px;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #ffd700, #ff8c00, #ff4500, #ffd700);
+    animation: flame 5s infinite linear;
+    background-size: 200% 100%;
 }
+
+@keyframes flame {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+
 
 .rightsidebar {
     width: 30%;

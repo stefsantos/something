@@ -83,17 +83,17 @@ color: rgb(51, 51, 51);
 .grid-3x3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Creates three columns */
-    grid-gap: 20px; /* Adjusts the gap between grid items */
-    margin-top: 20px; /* Adds some space above the grid */
+    grid-gap: 20px;
+    margin-top: 20px;
   }
   
   .grid-item {
-    background-color: #363636; /* Light grey background, adjust as needed */
-    height: 225px; /* Sets the height of each grid item */
+    background-color: #363636;
+    height: 225px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ddd; /* Adds a light border around each grid item */
+    border: 1px solid #ddd;
   }
 
   .grid-item:hover {

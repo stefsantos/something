@@ -88,7 +88,7 @@ function HomePage() {
                         ))}
                     </div>
                     <div className='rightsidebar'>
-                        <div className='sidetitle'>Popular Movies</div>
+                        <div className='sidetitle'>🔥Popular Movies</div>
                         <div className='sidebarcontent'>
                         {trendingMovies.map(movie => (
                             <Link to={`/movie/${movie.id}`} key={movie.id}>
