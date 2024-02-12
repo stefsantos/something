@@ -2,17 +2,21 @@ import React from 'react';
 import './friends_page.css';
 import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { useUser } from '../../src/UserContext';
 
 // Mock data for friends
 const friendsData = [
-    { id: 1, name: 'Yco Santos', avatar: 'images/yco.png', profileLink: '/profile/yco' },
-    { id: 2, name: 'Austin Gan', avatar: 'images/austin.jpg', profileLink: '/profile/austin' },
-    { id: 3, name: 'Matthew Suarez', avatar: 'images/philipp.jpg', profileLink: '/profile/philipp' },
-    { id: 4, name: 'Javi del Rosario', avatar: 'images/javi.jpg', profileLink: '/profile/javi' },
-    { id: 5, name: 'Charles White', avatar: 'images/moist.png', profileLink: '/profile/charles' },
+    { id: 1, name: 'Yco Santos', avatar: 'images/yco.png', profileLink: '/profile/Yco Santos' },
+    { id: 2, name: 'Austin Gan', avatar: 'images/austin.jpg', profileLink: '/profile/Austin Gan' },
+    { id: 3, name: 'Matthew Suarez', avatar: 'images/philipp.jpg', profileLink: '/profile/Philipp Matthew Suarez' },
+    { id: 4, name: 'Javi del Rosario', avatar: 'images/javi.jpg', profileLink: '/profile/Javi del Rosario' },
+    { id: 5, name: 'Charles White', avatar: 'images/moist.png', profileLink: '/profile/Charles White' },
 ];
 
 function friends_page() {
+    const { activeusername } = useUser();
+    console.log('Username:', activeusername);
+
     return (
         <div className="page_container">
             <div className="friends_container">
@@ -26,17 +30,20 @@ function friends_page() {
 
                 <div className="friendprofiles_container">
                     {friendsData.map((friend) => (
-                        <div key={friend.id} className="friend_profile">
-                            <img src={friend.avatar} alt="avatar" className="friend_avatar" />
-                            <div className="friend_name">
-                                {friend.name}
+                        // Check if the friend's username is different from the current user's username
+                        // If it's the same, don't render the friend profile
+                        friend.name !== activeusername && (
+                            <div key={friend.id} className="friend_profile">
+                                <img src={friend.avatar} alt="avatar" className="friend_avatar" />
+                                <div className="friend_name">
+                                    {friend.name}
+                                </div>
+                                <Link to={friend.profileLink} className="visit_button">Visit</Link>
                             </div>
-                            <Link to={friend.profileLink} className="visit_button">Visit</Link>
-                        </div>
+                        )
                     ))}
                 </div>
             </div>
-
             <div className="request_container">
                 <div className="request_header">
                     Friend Requests

@@ -7,7 +7,7 @@ import { useUser } from '../../src/UserContext';
 
 const Navbar = () => {
     
-    const { username } = useUser();
+    const { activeusername } = useUser();
     
     // State to manage the visibility of the PostTab
     const [isPostTabVisible, setIsPostTabVisible] = useState(false);
@@ -55,7 +55,7 @@ const Navbar = () => {
 
                 <LogoutContainer>
                 <NavLink to="myprofile_page">
-                {username === 'Yco Santos' && (
+                {activeusername === 'Yco Santos' && (
                     <img src="images/yco.png" height="75"
                         style={{
                             borderRadius: '50%',
@@ -66,7 +66,7 @@ const Navbar = () => {
                         alt="Yco Santos Profile"
                     />
                 )}
-                {username === 'Austin Gan' && (
+                {activeusername === 'Austin Gan' && (
                     <img src="images/austin.jpg" height="75"
                         style={{
                             borderRadius: '50%',
@@ -77,7 +77,7 @@ const Navbar = () => {
                         alt="Austin Tan Profile"
                     />
                 )}
-                {username === 'Philipp Matthew Suarez' && (
+                {activeusername === 'Philipp Matthew Suarez' && (
                     <img src="images/philipp.jpg" height="75"
                         style={{
                             borderRadius: '50%',
@@ -88,7 +88,7 @@ const Navbar = () => {
                         alt="Philipp Matthew Suarez Profile"
                     />
                 )}
-                {username === 'Javi del Rosario' && (
+                {activeusername === 'Javi del Rosario' && (
                     <img src="images/javi.jpg" height="75"
                         style={{
                             borderRadius: '50%',
@@ -99,7 +99,7 @@ const Navbar = () => {
                         alt="Javi del Rosario Profile"
                     />
                 )}
-                {username === 'Charles White' && (
+                {activeusername === 'Charles White' && (
                     <img src="images/moist.png" height="75"
                         style={{
                             borderRadius: '50%',

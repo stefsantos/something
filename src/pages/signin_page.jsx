@@ -8,9 +8,10 @@ function SigninPage({ setShowNavbar }) {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const { updateUser } = useUser();
     const [errorMessage, setErrorMessage] = useState('');
+    const { updateUser } = useUser();
 
+    
     const userContext = useUser();
 
     const navigateHome = () => {
@@ -40,14 +41,14 @@ function SigninPage({ setShowNavbar }) {
         const handleLogin = (event) => {
             event.preventDefault();
             console.log('Login with:', email, password);
-            const username = getUsernameFromEmail(email);
+            const activeusername = getUsernameFromEmail(email);
         
 
             const isPasswordCorrect = checkPassword(email, password);
         
             if (isPasswordCorrect) {
-                console.log('Username:', username);
-                userContext.updateUser(username);
+                console.log('Username:', activeusername);
+                userContext.updateUser(activeusername);
                 console.log('User Context after login:', userContext);
                 navigateHome();
             } else {
