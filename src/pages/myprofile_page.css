@@ -28,6 +28,7 @@
     border-radius: 8px;
     box-shadow: 0px 0px 2px 2px #000000, 0px 0px 2px 2px #FFFFFF;
     justify-content: center;
+    text-align: center;
 }
 
 .profile_banner {
@@ -59,14 +60,13 @@
   }
 
 .profile_name {
-    position: absolute; 
+    position: relative; 
     top: 210px; 
-    left: 198px; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px; 
     font-weight: 700; 
     line-height: 30px; 
-    color: #FFFFFF; 
+    color: #FFFFFF;
 }
 
 .profile_bio {
@@ -82,7 +82,7 @@
 }
 
 .edit_profile.button {
-    position: relative; 
+    position: absolute; 
     top: 314px; 
     width: 445px; 
     height: 36px; 
