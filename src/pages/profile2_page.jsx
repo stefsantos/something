@@ -60,9 +60,21 @@ const profileAvatars = {
     const isCurrentUser = activeusername === username;
 
     const renderEditProfileButton = () => {
-        if (isCurrentUser==0) {
+        if (isCurrentUser==0 && username !== 'Mutahar Anas') {
             return <button className="button edit_profile">✓ Already Friends</button>;
-        } else {
+        }
+
+        else if (isCurrentUser==0 && username === 'Mutahar Anas' && activeusername === 'Charles White')
+        {
+            return <button className="button edit_profile">✓ Already Friends</button>;
+        }
+
+        else if (isCurrentUser==0 && username === 'Mutahar Anas' && activeusername !== 'Charles White')
+        {
+            return <button className="button edit_profile">Send Friend Request</button>;
+        }
+        
+        else {
             return <button className="button edit_profile" onClick={handleEditProfileClick}>Edit Profile</button>;
         }
     };
