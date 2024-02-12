@@ -114,8 +114,7 @@ function myprofile_page() {
                             <Link to={`/movie/${movie.id}`} key={movie.id}>
                             <img
                                 key={movie.id}
-                                className="movie-poster"
-                                style={{ width: '111px', height: '150px', margin: '10px', boxShadow: '0px 0px 5px rgba(255, 255, 255, 0.5)'  }}
+                                className="profile_movie-poster"
                                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                                 alt={movie.title}
                             />

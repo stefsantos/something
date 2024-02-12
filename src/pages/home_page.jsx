@@ -95,8 +95,7 @@ function HomePage() {
                             <Link to={`/movie/${movie.id}`} key={movie.id}>
                             <img
                                 key={movie.id}
-                                className="movie-poster"
-                                style={{ width: '200px', height: '250px', margin: '10px' }}
+                                className="home_movie-poster"
                                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                                 alt={movie.title}
                             />
