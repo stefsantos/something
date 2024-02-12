@@ -1,26 +1,20 @@
 import React, { useState } from "react";
 import "./PostTab.css";
 
-
 const PostTab = ({ isVisible, onClose }) => {
-  
   if (!isVisible) return null;
 
   const [files, setFiles] = useState([]);
-  const [fileInputLabel, setFileInputLabel] = useState("Upload Image(s)"); // Define this state to manage the label text
+  const [fileInputLabel, setFileInputLabel] = useState("Upload Image(s)");
 
-  // Function to handle the file input change event
   const handleFileChange = (event) => {
-  const selectedFiles = event.target.files;
-  setFiles(selectedFiles); // Store the selected files in state
-
-    // Update the label based on the selected file(s)
+    const selectedFiles = event.target.files;
+    setFiles(selectedFiles);
     const fileNames = Array.from(selectedFiles)
-    .map(file => file.name)
-    .join(', ');
+      .map(file => file.name)
+      .join(', ');
     setFileInputLabel(fileNames || "Upload Image(s)");
   };
-
 
   return (
     <div className="modal-backdrop">
@@ -41,7 +35,7 @@ const PostTab = ({ isVisible, onClose }) => {
             accept="image/*"
             onChange={handleFileChange}
             multiple
-            style={{ display: 'none' }} // Correctly hides the file input
+            style={{ display: 'none' }}
           />
         </div>
         <div className="modal-footer">

@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Movie from '../components/Movie';
 import MovieDetail from '../components/MovieDetail';
-import ContentContainer from '../components/ContentContainer'; // Import the ContentContainer
+import ContentContainer from '../components/ContentContainer'; 
 import PlaceholderContainer from '../components/PlaceholderContainer';
 import { useState } from 'react';
 
@@ -19,7 +19,7 @@ import {
     Route,
 } from "react-router-dom";
 
-//not sure pa how to implement this
+
 import Signin from "./pages/signin_page";
 import CreateAcct from "./pages/createacct_page";
 

@@ -2,12 +2,10 @@ import React from 'react';
 import './SharePopup.css';
 
 const SharePopup = ({ isOpen, onClose, post }) => {
-  // Function to copy post link to clipboard
   const handleShare = () => {
-    // Assuming `post.link` is the URL you want to share
     navigator.clipboard.writeText(post.link)
-      .then(() => alert('Post link copied to clipboard!')) // Success feedback
-      .catch(err => console.error('Failed to copy link: ', err)); // Error handling
+      .then(() => alert('Post link copied to clipboard!'))
+      .catch(err => console.error('Failed to copy link: ', err));
   };
 
   if (!isOpen) return null;

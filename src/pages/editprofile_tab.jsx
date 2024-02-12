@@ -19,14 +19,13 @@ const EditProfileTab = ({ isVisible, onClose }) => {
           <h2>Set Favorites</h2>
           </div>
           <div className="grid-3x3">
-            <div className="grid-item">+</div>
-            <div className="grid-item">+</div>
-            <div className="grid-item">+</div>
-            <div className="grid-item">+</div>
-            <div className="grid-item">+</div>
-            <div className="grid-item">+</div>
+            <button className="grid-item">+</button>
+            <button className="grid-item">+</button>
+            <button className="grid-item">+</button>
+            <button className="grid-item">+</button>
+            <button className="grid-item">+</button>
+            <button className="grid-item">+</button>
           </div>
-          {/* 3x3 Grid End */}
         </div>
         <div className="modal-footer">
           <button className="button cancel-button" onClick={onClose}>Cancel</button>

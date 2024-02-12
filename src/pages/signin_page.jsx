@@ -10,7 +10,6 @@ function SigninPage({ setShowNavbar }) {
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
-
     
     const userContext = useUser();
 

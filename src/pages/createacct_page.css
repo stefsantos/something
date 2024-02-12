@@ -1,4 +1,4 @@
-/* Full screen layout with sidebar for Create Account page */
+
 .create-account-fullscreen {
     display: flex;
     height: 100vh;
@@ -7,7 +7,7 @@
     background-color: #1d1d1d;
   }
   
-  /* Blue sidebar styling for Create Account page */
+  
   .create-account-side-bar {
     width: 40%;
     background-color: #101e33; 
@@ -24,7 +24,7 @@
     border-radius: 20px;
   }
   
-  /* Container for the create account form */
+
   .create-account-container {
     width: 60%;
     display: flex;
@@ -32,7 +32,7 @@
     align-items: center;
   }
   
-  /* White box container for the create account elements */
+
   .signup-container {
     background-color: #222831;
     padding: 40px;
@@ -44,7 +44,7 @@
     color: #eeeeee;
   }
   
-  /* Form and input styling for create account page */
+
   .signup-container h2 {
     margin-bottom: 20px;
   }
@@ -67,7 +67,7 @@
     color: #eeeeee;
   }
   
-  /* Button styling for create account page */
+  
   .signup-button {
     width: 100%;
     padding: 10px;
@@ -82,7 +82,7 @@
     background-color: #007c7a;
   }
   
-  /* Link to sign in page from create account page */
+
   .signin-link {
     text-align: center;
     margin-top: 20px;

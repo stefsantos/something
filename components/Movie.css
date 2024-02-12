@@ -6,6 +6,7 @@
     min-height: 100vh;
     min-width: 100%;
     text-align: center;
+    
 }
 
 .movie_header {
@@ -19,6 +20,7 @@
     justify-content: center;
     margin-top: 20px;
     flex-direction: column;
+    
 }
 
 .search-input {
@@ -35,9 +37,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    min-width: 75vw;
+    min-width: 60vw;
     margin-top: 130px;
-    overflow: auto;
+    
 }
 
 .movie-item {
@@ -105,13 +107,13 @@
     border: 1px solid #000000;
     border-radius: 5px;
     overflow: hidden;
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
-    display: inline-block; /* Ensure transform applies correctly */
+    transition: transform 0.3s ease; 
+    display: inline-block; 
 }
 
 .movie-item:hover {
-    transform: scale(1.05); /* Enlarge the movie item by 5% */
-    z-index: 10; /* Ensure the enlarged item overlaps adjacent items if necessary */
+    transform: scale(1.05); 
+    z-index: 10; 
 }
 
 

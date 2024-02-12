@@ -19,7 +19,7 @@ function CreateAcctPage({ setShowNavbar }) {
   const handleSignup = (event) => {
     event.preventDefault();
     console.log('Signup with:', newEmail, newPassword);
-    navigateHome(); // Redirect to home after signup
+    navigateHome();
   };
 
 
