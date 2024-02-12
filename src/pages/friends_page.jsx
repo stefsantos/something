@@ -17,6 +17,9 @@ const friendsData = [
 // Mock data for friend requests
 const friendRequestsData = [
     { id: 1, name: 'Mutahar Anas', avatar: 'images/muta.png', mutualContacts: 1 },
+    { id: 2, name: 'zookee76', avatar: 'https://avatars.githubusercontent.com/u/135536455?v=4', mutualContacts: 0 },
+    { id: 3, name: 'Sn3s', avatar: 'https://avatars.githubusercontent.com/u/84768613?v=4', mutualContacts: 0 },
+    { id: 4, name: 'KAFuccino', avatar: 'https://avatars.githubusercontent.com/u/139977647?v=4', mutualContacts: 0 },
   ];
 
 
@@ -63,7 +66,7 @@ function friends_page() {
         <div className="request_header">Friend Requests</div>
         <div className="friendrequest_container">
           {friendRequests.map((request) => (
-            (activeusername !== 'Charles White' && request.name === 'Mutahar Anas') && (
+            (activeusername !== 'Charles White' || activeusername === 'Charles White' && request.name !== 'Mutahar Anas') && (
               <div key={request.id} className="friend_request">
                 <img src={request.avatar} alt="avatar" className="request_avatar" />
                 <div className="request_text">
