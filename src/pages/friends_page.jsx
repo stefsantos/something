@@ -8,7 +8,7 @@ import { useUser } from '../../src/UserContext';
 const friendsData = [
     { id: 1, name: 'Yco Santos', avatar: 'images/yco.png', profileLink: '/profile/Yco Santos' },
     { id: 2, name: 'Austin Gan', avatar: 'images/austin.jpg', profileLink: '/profile/Austin Gan' },
-    { id: 3, name: 'Matthew Suarez', avatar: 'images/philipp.jpg', profileLink: '/profile/Philipp Matthew Suarez' },
+    { id: 3, name: 'Philipp Matthew Suarez', avatar: 'images/philipp.jpg', profileLink: '/profile/Philipp Matthew Suarez' },
     { id: 4, name: 'Javi del Rosario', avatar: 'images/javi.jpg', profileLink: '/profile/Javi del Rosario' },
     { id: 5, name: 'Charles White', avatar: 'images/moist.png', profileLink: '/profile/Charles White' },
 ];
