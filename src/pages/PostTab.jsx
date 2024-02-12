@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./PostTab.css";
 
 
 const PostTab = ({ isVisible, onClose }) => {
+  
   if (!isVisible) return null;
+
+  const [files, setFiles] = useState([]);
+  const [fileInputLabel, setFileInputLabel] = useState("Upload Image(s)"); // Define this state to manage the label text
+
+  // Function to handle the file input change event
+  const handleFileChange = (event) => {
+  const selectedFiles = event.target.files;
+  setFiles(selectedFiles); // Store the selected files in state
+
+    // Update the label based on the selected file(s)
+    const fileNames = Array.from(selectedFiles)
+    .map(file => file.name)
+    .join(', ');
+    setFileInputLabel(fileNames || "Upload Image(s)");
+  };
+
 
   return (
     <div className="modal-backdrop">
@@ -15,6 +32,17 @@ const PostTab = ({ isVisible, onClose }) => {
         <div className="modal-content">
           <input className="modal-input" type="text" placeholder="Movie Watched" />
           <textarea className="modal-input" placeholder="What about it?"></textarea>
+          <label htmlFor="file-upload" className="file-upload-label">
+            {fileInputLabel}
+          </label>
+          <input
+            id="file-upload"
+            type="file"
+            accept="image/*"
+            onChange={handleFileChange}
+            multiple
+            style={{ display: 'none' }} // Correctly hides the file input
+          />
         </div>
         <div className="modal-footer">
           <button className="button cancel-button" onClick={onClose}>Cancel</button>

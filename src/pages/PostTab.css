@@ -71,14 +71,36 @@ border-radius: 4px;
 cursor: pointer;
 }
 
-/* Specific styles for the 'Create' button */
+
 .create-button {
-background-color: #A949F5;
-color: rgb(239, 239, 239);
+background-color: #9b3fe7;
+color: rgb(255, 255, 255);
 }
 
-/* Specific styles for the 'Cancel' button */
+.create-button:hover {
+    background-color: #a747f5;
+    color: rgb(255, 255, 255);
+    }
+
 .cancel-button {
 background-color: #E6E6E6;
 color: rgb(51, 51, 51);
+}
+
+.file-upload-label {
+    background-color: rgb(82, 53, 139); 
+    color: white; 
+    display: inline-block; 
+    padding: 8px 16px; 
+    margin-bottom: 10px; 
+    border-radius: 4px;
+    cursor: pointer; 
+    text-align: center; 
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+/* Hover effect for the file upload label to indicate interactivity */
+.file-upload-label:hover {
+    background-color: #8e3ad2; 
 }
