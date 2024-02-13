@@ -1,3 +1,7 @@
+body {
+    background-color: #1d1d1d;
+}
+
 .movie-list-container {
     display: flex;
     flex-direction: column;
