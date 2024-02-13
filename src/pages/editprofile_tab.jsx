@@ -15,7 +15,7 @@ const EditProfileTab = ({ isVisible, onClose }) => {
         <div className="modal-content">
           <input className="modal-input" type="text" placeholder="Change Profile Name" />
           <textarea className="modal-input" placeholder="Change Bio"></textarea>
-          <div className = "modal-header" >
+          <div>
           <h2>Set Favorites</h2>
           </div>
           <div className="grid-3x3">
