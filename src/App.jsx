@@ -6,7 +6,6 @@ import ContentContainer from '../components/ContentContainer';
 import PlaceholderContainer from '../components/PlaceholderContainer';
 import { useState } from 'react';
 
-
 import HomePage from "./pages/home_page";
 import Friends from "./pages/friends_page";
 import Watchlist from "./pages/watchlist_page";
