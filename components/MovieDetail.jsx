@@ -62,10 +62,14 @@ function MovieDetail() {
                     <p>{movieDetails.overview}</p>
                     {movieDetails.director && <p>Director: {movieDetails.director}</p>}
                     <p>User Score: {renderStarRating(movieDetails.vote_average * 10)}</p>
+                    
                 </div>
+                
             </div>
         )}
+        
         <button onClick={handleBack} style={{ marginTop: '10px', marginLeft: '20px', color: 'white'}}>Back</button>
+        <button onClick={handleBack} style={{ marginTop: '10px', marginLeft: '20px', color: 'white'}}>Add to Watchlist</button>
     </div>
     );
 }
