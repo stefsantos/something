@@ -2,15 +2,14 @@ import React, { useState, useLayoutEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './createacct_page.css';
 import logo from '../assets/CineShare Logo Request.webp';
-import { useToast } from "@chakra-ui/react";
-
+import { useToast, Spinner } from "@chakra-ui/react";
 
 function CreateAcctPage({ setShowNavbar }) {
     const navigate = useNavigate();
-
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [passwordError, setPasswordError] = useState(false); // New state for password error
     const [showPassword, setShowPassword] = useState(false);
-
+    const [isLoading, setIsLoading] = useState(false);
     const toast = useToast();
 
     const navigateSignIn = () => {
@@ -18,7 +17,7 @@ function CreateAcctPage({ setShowNavbar }) {
         setShowNavbar(true);
     };
 
-    const [inputs, setInputs] = useState ({
+    const [inputs, setInputs] = useState({
         username: "",
         email: "",
         password: "",
@@ -26,8 +25,11 @@ function CreateAcctPage({ setShowNavbar }) {
 
     const handleSignUp = async (event) => {
         event.preventDefault();
-        
+        setIsLoading(true);
+
         if (inputs.password !== confirmPassword) {
+            setIsLoading(false); // Stop the loading animation
+            setPasswordError(true); // Set password error state to true
             toast({
                 title: "Error",
                 description: "Passwords do not match",
@@ -35,9 +37,11 @@ function CreateAcctPage({ setShowNavbar }) {
                 duration: 3000,
                 isClosable: true,
             });
-            return; // Stop the function if passwords do not match
+            return;
+        } else {
+            setPasswordError(false); // Ensure password error is cleared if they now match
         }
-        
+
         try {
             const res = await fetch("/api/users/signup", {
                 method: "POST",
@@ -45,60 +49,44 @@ function CreateAcctPage({ setShowNavbar }) {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(inputs)
-            })
+            });
 
             if (!res.ok) {
-                // If the HTTP status code is not successful, handle it
                 throw new Error('Server responded with a status: ' + res.status);
             }
-            
-            let data;
-        try {
-            data = await res.json();
-        } catch (jsonSyntaxError) {
-            throw new Error('Server response was not valid JSON');
-    }
 
-        console.log(data);
+            let data = await res.json();
 
-        if (data.error) {
+            if (data.error) {
+                toast({
+                    title: "Error",
+                    description: data.error,
+                    status: "error",
+                    duration: 3000,
+                    isClosable: true,
+                });
+            } else {
+                navigateSignIn();
+                localStorage.setItem("user-info", JSON.stringify(data));
+            }
+        } catch (error) {
             toast({
                 title: "Error",
-                description: data.error,
+                description: error.toString(),
                 status: "error",
                 duration: 3000,
                 isClosable: true,
             });
-        } else {
-            navigateSignIn();
-            // It's typically not recommended to store user info in localStorage.
-            // Consider storing only a session token or similar instead.
-            localStorage.setItem("user-info", JSON.stringify(data));
+        } finally {
+            setIsLoading(false);
         }
-
-    } catch (error) {
-        console.error('An error occurred:', error);
-        toast({
-            title: "Error",
-            description: error.toString(),
-            status: "error",
-            duration: 3000,
-            isClosable: true,
-        });
-    }
-}
-
-    const navigateHome = () => {
-    navigate('/home_page');
-    setShowNavbar(true);
-    }
+    };
 
     useLayoutEffect(() => {
-    setShowNavbar(false);
+        setShowNavbar(false);
     }, []);
 
     return (
-        <div className="create-account-fullscreen">
         <div className="create-account-fullscreen">
             <div className="create-account-side-bar">
                 <img src={logo} alt="logo" height="400px" width="400px" />
@@ -108,33 +96,34 @@ function CreateAcctPage({ setShowNavbar }) {
                     <h2>Create Account</h2>
                     <form className="signup-form" onSubmit={handleSignUp}>
                         <div className="input-group">
-                        <label htmlFor="username">Username</label>
+                            <label htmlFor="username">Username</label>
                             <input
                                 id="username"
                                 type="text"
                                 value={inputs.username}
-                                onChange={(e) => setInputs({...inputs, username: e.target.value})}
+                                onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
                                 required
                             />
                         </div>
                         <div className="input-group">
-                        <label htmlFor="email">Email</label>
+                            <label htmlFor="email">Email</label>
                             <input
                                 id="email"
                                 type="email"
                                 value={inputs.email}
-                                onChange={(e) => setInputs({...inputs, email: e.target.value})}
+                                onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
                                 placeholder="example@gmail.com"
                                 required
                             />
                         </div>
                         <div className="input-group">
-                        <label htmlFor="password">Password</label>
-                            <input 
+                            <label htmlFor="password">Password</label>
+                            <input
                                 id="password"
                                 type={showPassword ? "text" : "password"}
                                 value={inputs.password}
-                                onChange={(e) => setInputs({...inputs, password: e.target.value})}                                required
+                                onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
+                                required
                             />
                         </div>
                         <div className="input-group">
@@ -147,8 +136,11 @@ function CreateAcctPage({ setShowNavbar }) {
                                 required
                             />
                         </div>
-                        <button type="submit" className="signup-button">
-                            Create Account
+                        {passwordError && (
+                            <div style={{ color: 'red', marginTop: '10px' }}>Passwords do not match.</div>
+                        )}
+                        <button type="submit" className="signup-button" disabled={isLoading}>
+                            {isLoading ? <Spinner /> : 'Create Account'}
                         </button>
                     </form>
                     <div className="signin-link">
@@ -160,8 +152,7 @@ function CreateAcctPage({ setShowNavbar }) {
                 </div>
             </div>
         </div>
-        </div>
     );
-    }
+}
 
-    export default CreateAcctPage;
+export default CreateAcctPage;
